@@ -1,0 +1,107 @@
+* {
+    outline: 2px solid blue;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #384A62;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+.nav-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 10px; */
+}
+
+.child-list1, .child-list2 {
+    display: flex;
+    /* justify-content: space-between; */
+    list-style: none;
+}
+
+.hero {
+    background-color: #ECE8D9;
+
+}
+.hero-nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.hero-navList-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navList-item1, .navList-item2 {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.hero-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.hero-main-searchContainer {
+    height: 50px;
+    background-color: #ffffff;
+
+}
+.productTitle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.productTitle h3 {
+    position: relative;
+    left: 45px;
+}
+
+.productTitle p {
+    position: relative;
+    right: 55px;
+    color: red;
+    font-weight: 100;
+    font-size: 15px;
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 0 40px;
+}
+.card {
+    display: grid;
+    border: 2px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.card img {
+    height: 250px;
+    width: 300px;
+    margin: auto;
+    
+}
+.card h5, .card p, .card button {
+    margin: 10px 30px;
+}
+.product-price {
+    font-weight: 900;
+}
+.card button {
+    width: 9rem;
+    background-color: #384A62;
+    color: #ffffff;
+}

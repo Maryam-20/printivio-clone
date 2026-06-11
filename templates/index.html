@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+     <header>
+        <nav class="nav-container">
+            <ul class='child-list1'>
+                <li>Cost Calculator</li>
+                <li>Discover Store</li>
+                <li>Trick Orders</li>
+            </ul>
+            <ul class='child-list2'>
+                <li>
+                    <p>Need help Call <br> 
+                        <a href="">+2348056734</a>
+                        <a href="">+234906754279</a>
+                    </p>
+                </li>
+                <li>Nigeria</li>
+                <li>UK</li>
+            </ul>
+        </nav>
+     </header>
+
+     <section class='hero'>
+        <nav class='hero-nav'>
+            <h3>printivo</h3>
+            <div hro-navList-container>
+                <ul class='navList-item1'>
+                    <li>All Product</li>
+                    <li>Become a Reseller</li>
+                    <li>Merch Store</li>
+                    <li>Marketplace</li>
+                </ul>
+
+                <ul class='navList-item2'>
+                    <li>Sign in</li>
+                    <li>Create Account</li>
+                    <li><img src="" alt=""></li>
+                </ul>
+            </div>
+        </nav>
+        <main class='hero-main'>
+            <div class='hero-main-text'>
+                <h2>Quality Prints</h2>
+                <p>Shipped to your doorstep</p>
+                <p>What would you like to print today?</p>
+                <div>
+                    <div class='hero-main-searchContainer'>
+                        <input type="text" placeholder='Search for Business cards, T-shirts, Mugs e.t.c'>
+                    </div>
+                    <div>
+                        <img src="">
+                    </div>
+                </div>
+            </div>
+            <div class='hero-main-hand'>
+                <img src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1623764552/printivo/Card3_n9kqin.png" alt="icon-search" alt="hand-card">
+            </div>
+        </main>
+     </section>
+
+     <section class='popularProduct-container'>
+        <div class='productTitle'>
+            <h3>Popular Products</h3>
+            <p>See All Products</p>
+        </div>
+        {% if products %}
+        <div class='card-container'>
+            {% for product in products  %}
+            <div class='card'>
+                <img src="{{product.image}}" alt="product-image">
+                <h5 class='product-title'>{{product.title}}</h5>
+                <p class='product category'>{{product.category}}</p>
+                <p class='product-price'>${{product.price}}</p>
+                <button type="button">Add to cart</button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+     </section>
+</body>
+</html>
