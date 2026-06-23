@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Product
 
 # Create your views here.
 products = [
@@ -244,11 +245,32 @@ products = [
   }
 ]
 
-def productDisplay(request):
+def homePageView(request):
     return render(
         request, 
         template_name='index.html',
         context= {
-            'products': products
+            'products': products[:6]
             }
+    )
+
+def allProductView(request):
+    product = Product.objects.all()
+    print(product)
+    return render(
+        request,
+        template_name= "all_product.html",
+        context= {
+            "product": product
+        }
+    )
+
+def productDetailsView(request, id):
+    product = get_object_or_404(Product, id = id)
+    return render(
+        request,
+        template_name= "product_details.html",
+        context= {
+            "product": product
+        }
     )
