@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Design and Print Business Cards, Flyers Online in Nigeria{% endblock title %}</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+    <nav class="nav-container">
+            <ul class='child-list1'>
+                <li>Cost Calculator</li>
+                <li>Discover Store</li>
+                <li>Trick Orders</li>
+            </ul>
+            <ul class='child-list2'>
+                <li class="help-call">
+                    <p>Need help Call <br> 
+                        <a href="">+2348056734</a>
+                        <a href="">+234906754279</a>
+                    </p>
+                </li>
+                <li><img src="{% static "images/whatsapp-svgrepo-com.svg" %}" class="whatsapp-icon" alt=""></li>
+                <li class="country-icon"><img src="{% static "images/flag-for-flag-united-kingdom-svgrepo-com.svg" %}"  alt=""><span>Nigeria</span></li>
+                <li class="country-icon"><img src="{% static "images/flag-for-flag-united-kingdom-svgrepo-com.svg" %}" alt=""> <span>UK</span></li>
+            </ul>
+        </nav>
+
+        {% block content %}{% endblock content %}
+</body>
+</html>
