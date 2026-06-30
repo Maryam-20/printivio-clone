@@ -265,12 +265,12 @@ def allProductView(request):
         }
     )
 
-def productDetailsView(request, id):
+def singleProductView(request, id):
     product = get_object_or_404(Product, id = id)
     return render(
         request,
         template_name= "product_details.html",
         context= {
-            "product": product
+            "product_detail": product
         }
-    )
+)

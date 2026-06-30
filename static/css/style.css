@@ -220,3 +220,84 @@ svg {
     background-color: #384A62;
     color: #ffffff;
 }
+
+
+/* PRODUCT DETAILS STYLING */
+.hero-nav-logo {
+    margin-top: 20px;
+}
+.hero-nav-logo .logo-txt {
+    font-size: 3rem;
+    font-weight: 600;
+} 
+.hero-home-nav a {
+    text-decoration: none;
+    color: #708095;
+    margin-left: 15px;
+}
+.hero-prod-nav a {
+    text-decoration: none;
+    color: #708095;
+    font-weight: 900;
+}
+
+.hero-searchContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+.searchContainer{
+    /* display: flex; */
+    height: 3rem;
+    width: 16rem;
+    /* justify-self: flex-end;
+    align-self: flex-start; */
+    /* margin-top: 0; */
+    margin-right: 5rem;
+    /* justify-content: center; */
+    align-items: center;
+    border: 1px solid #708095;
+    border-radius: 3px;
+    background-color: #ffffff;
+
+}
+.searchContainer input{
+    /* height: 3rem; */
+    /* width: 16rem; */
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    background-color: #ffffff;
+    margin: auto 20px;
+
+}
+
+.searchContainer input:focus {
+    border: none;
+    outline: none;
+}
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+}
+.sidebar ul, .sidebar ul li{
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #708095;
+    font-weight: 700;
+    font-size: 12px;
+}
+.productDetailContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
