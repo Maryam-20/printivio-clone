@@ -4,10 +4,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #384A62;
+} */
+
+/* 1. Reset all elements on the page */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Style the global page defaults */
+body, html {
     font-family: 'Roboto', sans-serif;
     color: #384A62;
 }
@@ -291,12 +304,58 @@ svg {
     font-weight: 700;
     font-size: 12px;
 }
+
+/* SINGLE PRODUCT STYLING */
 .productDetailContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    width: 80%;
+    height: 70dvh;
+    margin: auto;
+}
+.productImage img {
+    width: 70%;
+    height: 80%;
+    /* justify-self: center; */
+    margin: 3rem 3rem;
+}
+.productTitle{
+    font-size: 3em;
+    font-weight: 700;
+}
+.productDescription {
+    font-size: 18px;
+    line-height: 2rem;
+    text-wrap: "balance";
+}
+.material, .finishing {
+    font-weight: 800;
+    margin-top: 10px;
 }
 
+.productFinishing {
+    margin-bottom: 20px;
+}
+.productInfo select {
+    border: 1px solid #708095;
+    margin-top: 10px;
+    /* background-color: #708095; */
+    width: 10.5rem;
+    height: 2.3rem;
+}
+
+.productInfo button {
+    border: 1px solid #D77F81;
+    border-radius: 5px;
+    width: 10rem;
+    height: 3rem;
+    color: #ffffff;
+    padding: 5px;
+    font-weight: 800;
+    margin-left: 20px;
+    background-color: #D77F81;
+}
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

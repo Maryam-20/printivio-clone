@@ -1,0 +1,66 @@
+{% extends "common.html" %}
+{% block content %}
+{% load static %}
+
+<div class="hero-navContainer">
+    <nav class='hero-nav'>
+            <h3>printivo <br></h3>
+            {% comment %} <span><a href="{% url "home" %}">Home</a></span> <span>All Products</span> {% endcomment %}
+            <div class="hero-navList-container">
+                <ul class='navList-item1'>
+                    <li><a href="">All Product</a> </li>
+                    <li><a href="">Become a Reseller</a> </li>
+                    <li><a href="">Merch Store</a> </li>
+                    <li><a href="">Marketplace</a> </li>
+                </ul>
+
+                <ul class='navList-item2'><a href=""></a> 
+                    <li>Sign in</li>
+                    <li>Create Account</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cart-outline</title><path d="M17,18A2,2 0 0,1 19,20A2,2 0 0,1 17,22C15.89,22 15,21.1 15,20C15,18.89 15.89,18 17,18M1,2H4.27L5.21,4H20A1,1 0 0,1 21,5C21,5.17 20.95,5.34 20.88,5.5L17.3,11.97C16.96,12.58 16.3,13 15.55,13H8.1L7.2,14.63L7.17,14.75A0.25,0.25 0 0,0 7.42,15H19V17H7C5.89,17 5,16.1 5,15C5,14.65 5.09,14.32 5.24,14.04L6.6,11.59L3,4H1V2M7,18A2,2 0 0,1 9,20A2,2 0 0,1 7,22C5.89,22 5,21.1 5,20C5,18.89 5.89,18 7,18M16,11L18.78,6H6.14L8.5,11H16Z" /></svg></li>
+                </ul>
+            </div>
+        </nav>
+
+</div>
+<div>
+    <search class='hero-main-searchContainer'>
+        <input type="search" placeholder='Search for any product'>
+    </search>
+    <div>
+        <img src="">
+    </div>
+</div>
+
+{% if product_detail %}
+<main class="productDetailContainer">
+    {% if product_detail.image %}
+    <div class="productImage" >
+        <img src="{{product_detail.image.url}}" alt="">
+    </div>
+    {% endif %}
+    <div class="productInfo">
+        <h3 class="productTitle">{{product_detail.title}}</h3>
+        <p class="productDescription">{{product_detail.description}}</p>
+        <p class="material">Material</p>
+        <p class="productMaterial">{{product_detail.material}}</p>
+        <p class="finishing">Finishing</p> 
+        <p class="productFinishing">{{product_detail.finishing}}</p>
+        <p>Quantity</p>
+        <select name="" id="">
+            <option value="">100</option>
+            <option value="">200</option>
+            <option value="">300</option>
+            <option value="">400</option>
+            <option value="">500</option>
+            <option value="">1000</option>
+            <option value="">2000</option>
+        </select>
+
+        <button>Order Now</button>
+
+    </div>
+</main>
+{% endif %}
+
+{% endblock content %}

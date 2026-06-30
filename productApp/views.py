@@ -269,7 +269,7 @@ def singleProductView(request, id):
     product = get_object_or_404(Product, id = id)
     return render(
         request,
-        template_name= "product_details.html",
+        template_name= "single_product.html",
         context= {
             "product_detail": product
         }
