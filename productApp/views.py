@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Product
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import *
+from .forms import CategoryForm
 
 # Create your views here.
 products = [
@@ -255,16 +256,26 @@ def homePageView(request):
     )
 
 def allProductView(request):
+    categories = Category.objects.all()
     product = Product.objects.all()
     print(product)
     return render(
         request,
         template_name= "all_product.html",
         context= {
-            "product": product
+            "product": product,
+            "categories": categories
         }
     )
-
+def categoryProducts(request, id):
+    products = Product.objects.all().filter(id = id)
+    return render(
+        request,
+        template_name="all_product.html",
+        context= {
+            "product":products
+        }
+    )
 def singleProductView(request, id):
     product = get_object_or_404(Product, id = id)
     return render(
@@ -274,3 +285,20 @@ def singleProductView(request, id):
             "product_detail": product
         }
 )
+
+def addCategory(request):
+    if request.method == "POST":
+      form = CategoryForm(request.POST)
+      if form.is_valid():
+          form.save()
+      return redirect("allProducts")
+    
+    else:
+        form = CategoryForm
+        return render(
+            request,
+            template_name= "category_form.html",
+            context= {
+                "form": form
+            }
+        )
