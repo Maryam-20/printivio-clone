@@ -1,8 +1,8 @@
 {% extends "common.html" %}
 {% block content %}
 {% load static %}
-     <section class='hero'>
-        <nav class='hero-nav'>
+ 
+  <nav class='hero-nav'>
             <h3>printivo</h3>
             <div class="hero-navList-container">
                 <ul class='navList-item1'>
@@ -43,43 +43,5 @@
                 </ul>
             </div>
         </nav>
-        <main class='hero-main'>
-            <div class='hero-main-text'>
-                <div>Quality Prints</div>
-                <div class="shipped-text"><span>Shipped to your doorstep</span></div>
-                <p>What would you like to print today?</p>
-                <div>
-                    <search class='hero-main-searchContainer'>
-                        <input type="search" placeholder='Search for Business cards, T-shirts, Mugs e.t.c'>
-                    </search>
-                    <div>
-                        <img src="">
-                    </div>
-                </div>
-            </div>
-            <div class='hero-main-hand'>
-                <img src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1623764552/printivo/Card3_n9kqin.png" alt="icon-search" alt="hand-card">
-            </div>
-        </main>
-     </section>
-
-     <section class='popularProduct-container'>
-        <div class='productTitle'>
-            <h3>Popular Products</h3>
-            <p><a href="{% url "allProducts" %}">See All Products</a></p>
-        </div>
-        {% if products %}
-        <div class='card-container'>
-            {% for product in products  %}
-            <div class='card'>
-                <img src="{{product.image}}" alt="product-image">
-                <h5 class='product-title'>{{product.title}}</h5>
-                <p class='product category'>{{product.category}}</p>
-                <p class='product-price'>${{product.price}}</p>
-                <button type="button">Add to cart</button>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
-     </section>
+{% block page_content %}{% endblock page_content %}
 {% endblock content %}

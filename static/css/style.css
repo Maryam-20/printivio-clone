@@ -4,25 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    color: #384A62;
-} */
-
-/* 1. Reset all elements on the page */
+/*  Reset all elements on the page */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* 2. Style the global page defaults */
-body, html {
-    /* font-family: 'Roboto', sans-serif; */
-    /* color: #384A62; */
 }
 
 svg {
@@ -32,31 +18,17 @@ svg {
 .nav-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* gap: 10px; */
     height: 60px;
-    /* margin-top:2px;; */
 }
 
 .child-list1, .child-list2 {
     display: flex;
-    /* justify-content: center; */
-    /* justify-self: center; */
-    /* align-content: center; */
-    /* align-items: center; */
-    /* text-align: center; */
     list-style: none;
     margin-top:10px;
-    
-    /* gap: 20px; */
-    /* margin: 10px 10px; */
 }
 .child-list1 li {
-    /* justify-self: center; */
     padding: 10px;
-    /* align-self: center; */
     margin: 5px 15px;
-    /* display: flex;
-    gap: 20px; */
 }
 .child-list2 li{
     margin-right: 40px;
@@ -70,10 +42,6 @@ svg {
     position: relative;
     bottom: 2px;
 }
-/* .child-list2 li img {
-    width: 18px;
-    height: 20px;
-} */
 .whatsapp-icon {
     width: 40px;
     height: 35px;
@@ -95,8 +63,6 @@ svg {
     margin-top: 8px;
 }
 .country-icon span {
-    /* text-align: center; */
-    /* padding: 6px; */
     margin-top: 10px;
     font-size: 0.6rem;
 }
@@ -120,10 +86,7 @@ svg {
 .hero-navList-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* justify-content: space-between; */
-    /* gap: 10px; */
     margin: 20px 2px;
-    /* justify-content: space-between; */
 }
 
 .navList-item1, .navList-item2 {
@@ -134,14 +97,10 @@ svg {
 }
 .navList-item1 li, .navList-item2 li {
     margin: 15px 15px;
-    /* font-weight: 700;
-    letter-spacing: 0.09em;
-    font-size: 0.92rem; */
 }
 .navList-item1 li a, .navList-item2 li a  {
     text-decoration: none;
     color: #6A7D93;
-    /* margin: 45px 15px; */
     font-weight: 700;
     letter-spacing: 0.09em;
     font-size: 0.82rem;
@@ -152,12 +111,6 @@ svg {
     display: grid;
     grid-template-columns: 2fr 1fr;
     margin-top: 70px;
-    /* width: 100%; */
-}
-
-.hero-main-text {
-    /* width:100%; */
-    /* margin-top:40px; */
 }
 
 .hero-main-text div {
@@ -174,9 +127,7 @@ svg {
 }
 .shipped-text  span{
     font-weight: 600;
-    /* color: transparet; */
     font-size: 24px;
-    /* word-spacing: 8`px; */
     color: #708095;
     font-family: "SF Pro", sans-serif;
     line-height: 6px;
@@ -202,14 +153,12 @@ svg {
 
 }
 .hero-main-searchContainer input{
-    /* height: 2rem; */
     width: 29rem;
     font-size: 15px;
     color: #6A7D93;
     border: 2px solid #ffffff;
     border-radius: 3px;
     background-color: #ffffff;
-    /* margin: 5px 20px; */
 
 }
 
@@ -220,10 +169,6 @@ svg {
 .hero-main-hand img{
     width: 28rem;
     margin-top: 30px;
-    /* position: relative;
-    right: 70px; */
-    /* margin-right: 20px */
-    /* margin: 50px 0; */
 }
 .productTitle{
     display: flex;
@@ -298,14 +243,9 @@ svg {
     margin-left: 40px;
 }
 .searchContainer{
-    /* display: flex; */
     height: 3rem;
     width: 16rem;
-    /* justify-self: flex-end;
-    align-self: flex-start; */
-    /* margin-top: 0; */
     margin-right: 5rem;
-    /* justify-content: center; */
     align-items: center;
     border: 1px solid #708095;
     border-radius: 3px;
@@ -313,8 +253,6 @@ svg {
 
 }
 .searchContainer input{
-    /* height: 3rem; */
-    /* width: 16rem; */
     border: 2px solid #ffffff;
     border-radius: 3px;
     background-color: #ffffff;
@@ -355,7 +293,6 @@ svg {
 .productImage img {
     width: 70%;
     height: 80%;
-    /* justify-self: center; */
     margin: 3rem 3rem;
 }
 .productTitle{
@@ -378,7 +315,6 @@ svg {
 .productInfo select {
     border: 1px solid #708095;
     margin-top: 10px;
-    /* background-color: #708095; */
     width: 10.5rem;
     height: 2.3rem;
 }
@@ -397,4 +333,27 @@ svg {
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+/* SIGN IN FORM */
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; 
+}
+
+.signin-bg {
+    flex: 0 0 40%;     
+    background-image: url(../images/signin-lamp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;       
+}
+
+.modal-body button {
+   align-self: flex-end;
+}
+.forgotPassword {
+    color: #708095;
 }

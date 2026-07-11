@@ -251,7 +251,7 @@ def homePageView(request):
         request, 
         template_name='index.html',
         context= {
-            'products': products[:6]
+            'products': products[:2]
             }
     )
 
