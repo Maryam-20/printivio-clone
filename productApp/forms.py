@@ -8,3 +8,18 @@ class CategoryForm(forms.ModelForm):
         fields = [
             "name"
         ]
+
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = [
+            "title",
+            "description",
+            "material",
+            "finishing",
+            "quantity",
+            "price",
+            "category",
+            "image"
+        ]

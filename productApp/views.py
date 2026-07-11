@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
-from .forms import CategoryForm
+from .forms import *
 
 # Create your views here.
 products = [
@@ -300,5 +300,21 @@ def addCategory(request):
             template_name= "category_form.html",
             context= {
                 "form": form
+            }
+        )
+    
+def addProduct(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+
+    else:
+        form = ProductForm
+        return render(
+            request,
+            template_name="product_form.html",
+            context= {
+                "form":form
             }
         )
