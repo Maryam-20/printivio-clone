@@ -13,23 +13,23 @@
 <body>
 
     <nav class="nav-container">
-            <ul class='child-list1'>
-                <li>Cost Calculator</li>
-                <li>Discover Store</li>
-                <li>Trick Orders</li>
-            </ul>
-            <ul class='child-list2'>
-                <li class="help-call">
-                    <p>Need help? Call <br> 
-                        <a href="">+2348056734</a> <span>or</span>
-                        <a href="">+234906754279</a>
-                    </p>
-                </li>
-                <li><img src="{% static "images/whatsapp-svgrepo-com.svg" %}" class="whatsapp-icon" alt=""></li>
-                <li class="country-icon"><img src="{% static "images/flag-for-flag-united-kingdom-svgrepo-com.svg" %}"  alt=""><span>Nigeria</span></li>
-                <li class="country-icon"><img src="{% static "images/flag-for-flag-united-kingdom-svgrepo-com.svg" %}" alt=""> <span>UK</span></li>
-            </ul>
-        </nav>
+        <ul class='child-list1'>
+            <li>Cost Calculator</li>
+            <li>Discover Store</li>
+            <li>Trick Orders</li>
+        </ul>
+        <ul class='child-list2'>
+            <li class="help-call">
+                <p>Need help? Call <br> 
+                    <a href="">+2348056734</a> <span>or</span>
+                    <a href="">+234906754279</a>
+                </p>
+            </li>
+            <li><img src="{% static "images/whatsapp-svgrepo-com.svg" %}" class="whatsapp-icon" alt=""></li>
+            <li class="country-icon"><img src="{% static "images/flag-for-flag-united-kingdom-svgrepo-com.svg" %}"  alt=""><span>Nigeria</span></li>
+            <li class="country-icon"><img src="{% static "images/flag-for-flag-united-kingdom-svgrepo-com.svg" %}" alt=""> <span>UK</span></li>
+        </ul>
+        
         <!-- LOGIN MODAL -->
         <div class="modal fade border rounded" id="loginModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -55,9 +55,147 @@
                 </div>
             </div>
         </div>
+    </nav>
+    {% block content %}{% endblock content %}
 
-        {% block content %}{% endblock content %}
 
+
+    <div class="countContainer">
+        <div class="count-on-text">You can count on us for:</div>
+        <div class="card-container">
+            <div class="card-child">
+                <div class="icon">
+                    <img src="{% static "images/clock-icon2.svg" %}" alt="">
+                </div>
+                <div class="text-container">
+                    <div class="title">Fast turnaround within days</div>
+                    <div class="text">Your order gets to you within 3-7 working days via DHL or our very own Printivo Direct.</div>
+                </div>
+            </div>
+            <div class="card-child">
+                <div class="icon">
+                    <img src="{% static "images/quality-con.svg" %}" alt="">
+                </div>
+                <div class="text-container">
+                    <div class="title">100% Top Quality</div>
+                    <div class="text">Only the finest materials, machines and people will be involved in fulfilling your order</div>
+                </div>
+            </div>
+
+            <div class="card-child">
+                <div class="icon">
+                    <img src="{% static "images/services-icon.svg" %}" alt="">
+                </div>
+                <div class="text-container">
+                    <div class="title">Affordable Services</div>
+                    <div class="text">All products are adequately priced to ensure you get value for your money at all times</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="noticed-by-container">
+        <div class="noticed-title">Our amazing work got noticed by</div>
+        <div class="companies-container">
+            <div class="companies">
+                <div class="company-logo">
+                    <img src="{% static "images/techcrunch.svg" %}" alt="">
+                </div>
+                <div><a href="https://techcrunch.com/2015/10/23/printivo/">Read the article here</a></div>
+            </div>
+        
+       
+            <div class="companies">
+                <div class="company-logo">
+                    <img src="{% static "images/forbes.svg" %}" alt="">
+                </div>
+                <div><a href="https://techpoint.africa/general/printivo-makes-500-startups-last-batch/">Read the article here</a></div>
+            </div>
+        
+     
+            <div class="companies">
+                <div class="company-logo">
+                    <img src="{% static "images/techpoint-logo.png" %}" alt="">
+                </div>
+                <div><a href="https://techpoint.africa/general/printivo-makes-500-startups-last-batch/">Read the article here</a></div>
+            </div>
+        
+        
+            <div class="companies">
+                <div class="company-logo">
+                    <img src="{% static "images/techcabal-logo.svg" %}" alt="">
+                </div>
+                <div><a href="https://techcabal.com/2016/01/14/the-printivo-story/">Read the article here</a></div>
+            </div>
+
+            <div class="companies">
+                <div class="company-logo">
+                    <img class="cnn" src="{% static "images/cnn-logo.svg" %}" alt="">
+                </div>
+                <div><a href="https://edition.cnn.com/videos/world/2016/12/28/african-start-up-printivo.cnn">Read the article here</a></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="footer-container">
+        <div class="footer">
+            <div class="title">
+                <p>Printivo</p>
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Track Order</a></li>
+                    <li><a href="">Printivo Promise</a></li>
+                    <li><a href="">Printivo Blog</a></li>
+                    <li><a href="">Career</a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <p>Help and Information</p>
+                <ul>
+                    <li><a href="">Paper Quality</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Track Order</a></li>
+                    <li><a href="">Terms and Condition</a></li>
+                    <li><a href="">Font Licenses</a></li>
+                    <li><a href="">Shipping and Delivery</a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <p>Make Money</p>
+                <ul>
+                    <li><a href="">Refer a friend & earn N1,000</a></li>
+                    <li><a href="">Become a Reseller</a> </li>
+                    <li><a href="">Sell your Designs</a></li>
+                    <li><a href="">Merch Store</a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <p>Follow Us</p>
+                <div class="social-handles">
+                    <ul>
+                        <li><a href=""><img src="{% static "images/facebook-icon.svg" %}" alt="facebook"></a></li>
+                        <li><a href=""><img src="{% static "images/twitter-icon.svg" %}" alt="twitter"></a></li>
+                        <li><a href=""><img src="{% static "images/linkedin-icon.svg" %}" alt="linkedin"></a></li>
+                        <li><a href=""><img src="{% static "images/instagram-icon.svg" %}" alt="instagram"></a></li>
+                    </ul>
+                </div>
+                <div class="accepted-payment">Accepted Payments</div>
+                <div class="payment-options">
+                    <img src="{% static "images/payment-icon.png" %}" alt="payment-options">
+                </div>
+                <div class="delivery">Delivery</div>
+                <div class="delivery-partner">
+                    <img src="{% static "images/shipping-icon.png" %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © 2023 Printivo. All rights reserved.</p>
+    </div>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
