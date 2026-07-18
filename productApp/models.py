@@ -11,15 +11,6 @@ class Category(models.Model):
         return self.name
     
 class Product(models.Model):
-    QUANTITY_CHOICES = [
-        (100, 100),
-        (200, 200),
-        (300, 300),
-        (400, 400),
-        (500, 500),
-        (1000, 1000),
-        (2000, 2000)
-    ]
 
     STATUS_CHOICES = [
         ("IN_STOCK", "In stock"),
@@ -31,7 +22,7 @@ class Product(models.Model):
     description = models.TextField()
     material = models.CharField(max_length=100)
     finishing = models.CharField(max_length=100)
-    quantity = models.PositiveIntegerField(choices = QUANTITY_CHOICES, default = 0)
+    quantity = models.PositiveIntegerField(default = 0)
     status = models.CharField(max_length=50, choices = STATUS_CHOICES, default= "IN_STOCK")
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.RESTRICT)

@@ -3,4 +3,48 @@
 {% block page_content %}
 <!-- your all-products page content -->
 
+<!-- ALL PRODUCT DISPLAY -->
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- LEFT-- SIDEBAR -->
+        <div class="col-md-3 col-lg-2 border-end">
+            <h4 class="fw-bold">Filter</h4>
+            <hr>
+            <ul class="list-unstyled">
+                <li class="mb-3 px-3">
+                    <a href="{% url "allProducts" %}" class="text-decoration-none {% if current_category == 'all' %} text-danger fw-semibold {% else %}text-dark {% endif %}">All</a>
+                </li>
+                {% for category in categories  %}
+                <li class="mb-3 px-3">
+                    <a href="{% url "allProducts" %}?category={{category}}" class="text-decoration-none {% if current_category == category%} text-danger fw-semibold {% else %} text-dark {% endif %}">{{category|title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+        <div class="col-md-9 col-lg-10">
+            <h3>{{current_category}}</h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for product in products %}
+                <div class="col">
+                    <div class="card h-100 border-0">
+                        {% if product.image %}
+                        <img src="{{product.image.url}}" alt="{{product.title}}" class="card-img-top">
+                        {% else %}
+                        <img src="" alt="{{product.title}}" class="card-img-top">
+                        {% endif %}
+                        <div class="card-body px-0">
+                            <h5 class="fw-bold">{{product.title}}</h5>
+                            <p class="text-muted-small">{{product.description|truncatewords:15}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-muted">No products found in this category</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock page_content %}
