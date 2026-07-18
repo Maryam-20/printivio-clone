@@ -10,7 +10,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* COMMON HEADER NAV STYLING */
 svg {
     width: 20px;
     height: 20px;
@@ -67,6 +67,7 @@ svg {
     font-size: 0.6rem;
 }
 
+/* HERO SECTION STYLING */
 .hero {
     background-color: #ECE8D9;
 
@@ -77,16 +78,16 @@ svg {
     margin: 10px auto;
     gap: 0.5rem;
 }
-.hero-nav h3 {
-    font-weight: 800;
-    font-size: 2.5rem;
+
+.hero-nav img {
+    width: 9rem;
+    /* height: 5rem; */
     margin: 30px 55px;
-    color: #6A7D93;
 }
 .hero-navList-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    margin: 20px 2px;
+    margin: 10px 2px;
 }
 
 .navList-item1, .navList-item2 {
@@ -105,6 +106,10 @@ svg {
     letter-spacing: 0.09em;
     font-size: 0.82rem;
 
+}
+.d-inline {
+    font-family: "SF Pro", sans-serif;
+    font-weight: 600;
 }
 
 .hero-main {
@@ -170,21 +175,33 @@ svg {
     width: 28rem;
     margin-top: 30px;
 }
-.productTitle{
+
+/* POPULAR PRODUCT STYLING */
+.popularProduct-container, .popularCategory-container{
+    margin-top: 4rem;
+}
+.productTitle, .productCategory{
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    margin-bottom: 0.7rem;
 }
-.productTitle h3 {
+.productTitle h2, .productCategory h2 {
     position: relative;
-    left: 45px;
+    left: 60px;
+    color: #384A62;
+    font-family: "DM Serif Display", serif;
+    font-weight: 900;
+    font-size: 30px;
 }
 
-.productTitle p {
+.productTitle p a, .productCategory p a {
     position: relative;
     right: 55px;
-    color: red;
-    font-weight: 100;
+    color: #D77F81;
+    font-family: "SF Pro", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
     font-size: 15px;
 }
 .card-container {
@@ -209,79 +226,39 @@ svg {
     margin: 10px 30px;
 }
 .product-price {
-    font-weight: 900;
-}
-.card button {
-    width: 9rem;
-    background-color: #384A62;
-    color: #ffffff;
-}
-
-
-/* PRODUCT DETAILS STYLING */
-.hero-nav-logo {
-    margin-top: 20px;
-}
-.hero-nav-logo .logo-txt {
-    font-size: 3rem;
-    font-weight: 600;
-} 
-.hero-home-nav a {
-    text-decoration: none;
-    color: #708095;
-    margin-left: 15px;
-}
-.hero-prod-nav a {
-    text-decoration: none;
-    color: #708095;
-    font-weight: 900;
-}
-
-.hero-searchContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 40px;
-}
-.searchContainer{
-    height: 3rem;
-    width: 16rem;
-    margin-right: 5rem;
-    align-items: center;
-    border: 1px solid #708095;
-    border-radius: 3px;
-    background-color: #ffffff;
-
-}
-.searchContainer input{
-    border: 2px solid #ffffff;
-    border-radius: 3px;
-    background-color: #ffffff;
-    margin: auto 20px;
-
-}
-
-.searchContainer input:focus {
-    border: none;
-    outline: none;
-}
-.category-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-}
-.sidebar ul, .sidebar ul li{
-    list-style-type: none;
-    margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #708095;
     font-weight: 700;
-    font-size: 12px;
+    color: #384A62;
+    font-size: 20px;
+    font-family: "SF Pro", sans-serif;
+}
+.product-price span{
+    font-size: 14.4px;
+    color: #708095;
+    /* font-weight: 70; */
+}
+.card button, .card a, .card a:hover{
+    width: 15rem;
+    padding: 12px;
+    border: 1px solid #D77F81;
+    border-radius: 5px;
+    background-color: #D77F81;
+    color: #ffffff;
+    font-family: "SF Pro", sans-serif;
+    font-weight: 600;
+    
 }
 
-/* SINGLE PRODUCT STYLING */
+.starting-at {
+    color: #708095;
+    font-family: 'SF Pro', sans-serif;
+    font-weight: 700;
+    font-size: 12.8px;
+}
+.row .row , .row .row .col{
+    margin-top: 5px;
+}
+
+/* SINGLE PRODUCT PAGE STYLING */
 .productDetailContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -295,9 +272,12 @@ svg {
     height: 80%;
     margin: 3rem 3rem;
 }
-.productTitle{
-    font-size: 3em;
-    font-weight: 700;
+.productTitle h3{
+    font-size: 30px;
+    font-family: "DM Serif Display", serif;
+    color: #384A62;
+    font-weight: 400;
+    margin-top: 10px;
 }
 .productDescription {
     font-size: 18px;
@@ -356,4 +336,272 @@ svg {
 }
 .forgotPassword {
     color: #708095;
+}
+/* TRUSTED COMPANIES */
+.trusted-companies {
+    margin-top: 6rem;
+    height: 35dvh;
+}
+.nigeria {
+    font-weight: 800;
+    font-size: 35px;
+    font-family: "DM Serif Display", serif;
+    margin-left: 35px;
+    margin-bottom: 5px;
+    color: #384A62;
+}
+.print {
+    color: #506683;
+    font-size: 20px;
+    font-family:"SF Pro", sans-serif;
+    margin-left: 25px;
+    width: 42rem;
+    font-weight: 700;
+    margin-left: 35px;
+    margin-bottom: 30px;
+}
+.trusted-companies img {
+    margin-left: 35px;
+}
+
+/* REVIEW STYLING - COMMON TO ALL PAGES */
+.review-parent-container {
+    background-color: #EDF6FD;
+    margin-top: 10rem;
+    height: 70dvh;
+}
+.review-title {
+    font-weight: 400;
+    font-size: 30px;
+    font-family: "DM Serif Display", serif;
+    padding: 5rem 2px 0px 2px;
+    margin-left: 30px;
+    color: #384A62;
+}
+.review-parent-container .card-container {
+    display: flex;
+    margin-left:32px;
+}
+.child-card {
+    display: flex;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    width: 25rem;
+    height: 12rem;
+}
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    border: 1px solid #708095;
+    border-radius: 50px;
+    width: 80px;
+    padding: 5px;
+    height: 35px;
+}
+.child-card img {
+    width: 20px;
+    height: 20px;
+}
+.review-container .name {
+    font-weight: 600;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.review {
+    color: #384A62;
+    font-family: "SF Pro", sans-serif;
+    font-size: 15px;
+    padding: 10px;
+}
+.name a, .review a{
+    text-decoration: none;
+    color: #8ADDFF;
+}
+
+/* COUNT ON US - COMMON TO ALL PAGES */
+.countContainer {
+    height: 40dvh
+}
+.count-on-text {
+    margin-top: 5rem;
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    color: #384A62;
+    margin-left: 30px;
+}
+.countContainer .card-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 1rem;
+}
+.icon img {
+    width:50px;
+    height:50px;
+}
+.card-child {
+    display: flex;
+    margin-top: 5px;
+}
+.text-container {
+    margin-left: 20px;
+}
+.text-container .title {
+    color: #384A62;
+    font-weight: 600;
+    font-family: "SF Pro", sans-serif;
+    font-size: 16px;
+}
+.text-container .text {
+    font-family: "SF Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #384A62;
+    width: 15rem;
+}
+
+/* AMAZING WORKS NOTICED STYLING COMMON TO ALL PAGES */
+.noticed-by-container {
+    background-color: #F7F6F4;
+    height: 60dvh;
+}
+.noticed-title{
+    padding-top: 5rem;
+    color: #384A62;
+    margin-left: 30px;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: "DM Serif Display", serif;
+}
+
+.companies-container {
+    display: flex;
+    justify-content: space-around;
+}
+.companies {
+    margin: 20px;
+    display: grid;
+}
+.companies:last-child {
+    align-self: flex-end;
+}
+.company-logo img{
+    width: 8rem;
+}
+.companies a {
+    text-decoration: underline;
+    font: 600;
+    color: #384A62;
+}
+.company-logo .cnn {
+    width: 5rem;
+}
+.footer-container {
+    background-color: #384A62;
+    height: 85dvh;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 250px 300px 320px 300px;
+    padding-top: 4rem;
+    gap: 1rem;
+}
+
+.title p {
+    color: #ECE8D9;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 25px;
+}
+.title ul{
+    list-style-type: none;
+}
+.title ul li {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.title ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+}
+.social-handles ul{
+    display: flex;
+}
+.social-handles ul li {
+    margin: 10px;
+}
+
+.accepted-payment, .delivery {
+    color: #ECE8D9;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 25px;
+    font-family: "SF Pro", sans-serif;
+}
+.delivery {
+    margin-top: 25px;
+}
+.payment-options img, .delivery-partner img {
+    width: 13rem;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+/* COPYRIGHT STYLING */
+.copyright {
+    background-color: #CBCAC8;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* BROWSE ALL PRODUCTS IN A CATEGORY PAGE*/
+.category-hero {
+    background-color: #363853; 
+    color: #fff;
+    padding: 60px 40px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.category-hero-title {
+    font-family: "DM Serif Display", serif; 
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.category-hero-tagline {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.category-hero-description {
+    color: #d0d0d8;
+    max-width: 600px;
+    margin-bottom: 25px;
+}
+
+.category-hero-btn {
+    background-color: #fff;
+    color: #363853;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.category-hero-btn:hover {
+    background-color: #eee;
+    color: #363853;
 }

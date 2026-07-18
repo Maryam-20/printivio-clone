@@ -18,8 +18,10 @@ class ProductForm(forms.ModelForm):
             "description",
             "material",
             "finishing",
-            "quantity",
-            "price",
+           "quantity_inStock",
+           "quantity_per_order",
+           "price_per_unit",
+           "price_per_quantityOrder",
             "category",
             "image"
         ]

@@ -1,0 +1,69 @@
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
+{% load static %}
+
+<!-- CATEGORY HERO BANNER -->
+<section class="category-hero">
+    <div class="container">
+        <h1 class="category-hero-title">{{ category.name }}</h1>
+        <p class="category-hero-tagline">{{ category.tagline }}</p>
+        <p class="category-hero-description">{{ category.description }}</p>
+        <a href="{% url 'allProducts' %}" class="btn btn-light category-hero-btn">See all {{ category.name|lower }}</a>
+    </div>
+</section>
+
+<!-- PRODUCT LIST -->
+<section class="category-products container my-5">
+    {% for product in products_in_category %}
+    <div class="row product-row py-4 border-bottom align-items-start">
+
+        <!-- IMAGE -->
+        <div class="col-md-3">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="img-fluid rounded">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="col-md-5">
+            <h4 class="fw-bold">{{ product.title }}</h4>
+
+            {% if product.description %}
+            <p class="text-muted">{{ product.description }}</p>
+            {% endif %}
+
+            <p class="text-uppercase small text-muted mb-1">Starting at</p>
+            <p class="fw-bold fs-4">
+                {% if product.original_price %}
+                    <span class="text-decoration-line-through text-muted fs-6 me-2">₦{{ product.original_price }}</span>
+                {% endif %}
+                ₦{{ product.price }}
+            </p>
+
+            <a href="{% url 'productDetails' product.id %}" class="btn btn-danger">Order Now &gt;</a>
+        </div>
+
+        <!-- INFO COLUMN: delivery / material / finishing -->
+        <div class="col-md-4">
+            {% if product.delivery_estimate_lagos or product.delivery_estimate_other %}
+            <p class="fw-bold mb-1">Delivery:</p>
+            <p class="text-muted mb-1">{{ product.delivery_estimate_lagos }}</p>
+            <p class="text-muted mb-3">{{ product.delivery_estimate_other }}</p>
+            {% endif %}
+
+            {% if product.material %}
+            <p class="fw-bold mb-1">Material:</p>
+            <p class="text-muted mb-3">{{ product.material }}</p>
+            {% endif %}
+
+            {% if product.finishing %}
+            <p class="fw-bold mb-1">Finishing:</p>
+            <p class="text-muted">{{ product.finishing }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+    {% empty %}
+    <p class="text-muted text-center py-5">No products found in this category yet.</p>
+    {% endfor %}
+</section>
+
+{% endblock page_content %}
