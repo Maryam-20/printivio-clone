@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import *
+from .utils import resellerPage
 
 
 urlpatterns = [
@@ -7,5 +8,8 @@ urlpatterns = [
     path("product-detail/<int:id>/",singleProductView, name="productDetails"),
     path("add-category/", addCategory, name = "add-category" ),
     path("add-product/", addProduct, name="add-products"),
-    path("category/", browseProducts_inCategory, name="browse-products")
+    path("category/", browseProducts_inCategory, name="browse-products"),
+
+    # RESELLER PAGE
+    path("reseller/", resellerPage, name="reseller")
 ]

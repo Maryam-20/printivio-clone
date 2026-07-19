@@ -1,8 +1,8 @@
-{% extends "common.html" %}
-{% block content %}
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
 {% load static %}
 
-<div class="hero-navContainer">
+{% comment %} <div class="hero-navContainer">
     <nav class='hero-nav'>
             <h3>printivo <br></h3>
             <div class="hero-navList-container">
@@ -29,7 +29,7 @@
     <div>
         <img src="">
     </div>
-</div>
+</div> {% endcomment %}
 
 {% if product_detail %}
 <main class="productDetailContainer">
@@ -62,4 +62,4 @@
 </main>
 {% endif %}
 
-{% endblock content %}
+{% endblock page_content %}

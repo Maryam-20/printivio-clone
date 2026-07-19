@@ -1,0 +1,88 @@
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
+{% load static %}
+
+<div class="content-container">
+
+    <div class="reseller-page">
+        <div class="reseller-form-part-container">
+
+            <!-- LEFT: FORM -->
+            <div class="reseller-form-col">
+                <h1 class="reseller-title">Become an Affiliate</h1>
+                <p class="reseller-subtitle">
+                    Sign Up for an affiliate account to get your personal referral code to share with your customers.
+                </p>
+
+                <form method="post" action="" class="reseller-form">
+                    {% csrf_token %}
+
+                    <div class="reseller-form-row">
+                        <div class="reseller-form-group">
+                            <label for="first_name" class="form-label">Your First Name</label>
+                            <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="reseller-form-group">
+                            <label for="surname" class="form-label">Your Surname</label>
+                            <input type="text" id="surname" name="surname" class="form-control" placeholder="Enter your surname" required>
+                        </div>
+                    </div>
+
+                    <div class="reseller-form-row">
+                        <div class="reseller-form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="reseller-form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="reseller-form-footer">
+                        <p class="reseller-free-text">No more subscription fees,<br>free forever!</p>
+                        <button type="submit" class="btn reseller-signup-btn">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- RIGHT: PROMO + BENEFITS -->
+            <div class="reseller-promo-col">
+                
+                <div class="reseller-promo-banner">
+                    <div class="reseller-promo-text">
+                        <p class="reseller-promo-percent">20%</p>
+                        <p class="reseller-promo-off">Off</p>
+                        <h4 class="reseller-promo-desc">All print products on the website</h4>
+                    </div>
+                    <img src="{% static 'images/reseller-img-woman.png' %}" alt="Happy customer" class="reseller-promo-img">
+                
+                </div>
+        
+
+                <h4 class="reseller-benefits-title">Request to Join the Program</h4>
+                <ul class="reseller-benefits-list">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="check-icon"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>
+                        Ship directly to your customers nationwide
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="check-icon"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>
+                        Free sample pack when you join
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="check-icon"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>
+                        Special resellers exclusive deals
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="check-icon"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z"/></svg>
+                        Dedicated account executive
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock page_content %}
