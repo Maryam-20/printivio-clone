@@ -35,7 +35,7 @@
             {% if request.user.is_authenticated %}
             <li ><form method="post" action="{% url 'logout' %} " class="d-inline">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-link text-danger p-0 border-0 align-baseline">Sign out</button>
+                <button type="submit" class="btn btn-link text-danger p-0 border-0 align-baseline text-decoration-none fw-4">Sign out</button>
                 </form>
             </li>
             {% if not request.user.is_staff %}
@@ -62,12 +62,6 @@
         </ul>
     </div>
 </nav>
-
-
-
-
-
-
 
 {% block page_content %}{% endblock page_content %}
 {% endblock content %}

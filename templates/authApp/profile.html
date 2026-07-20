@@ -1,0 +1,101 @@
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
+{% load static %}
+
+<div class="content-container account-page">
+
+    <h1 class="account-title">My Account</h1>
+
+    <!-- TABS -->
+    <div class="account-tabs">
+        <a href="{% url 'myProfile' %}" class="account-tab active">My Profile</a>
+        <a href="" class="account-tab">My Saved Designs</a>
+        <a href="" class="account-tab">Account Settings</a>
+        <a href="" class="account-tab">Order History</a>
+    </div>
+    <hr class="account-tabs-divider">
+
+    <div class="account-body">
+
+        <!-- LEFT: AVATAR + BASIC INFO -->
+        <div class="account-profile-col">
+            <div class="account-avatar-wrap">
+                {% if profile.profile_image %}
+                    <img src="{{ profile.profile_image.url }}" alt="{{ profile.user.get_full_name }}" class="account-avatar">
+                {% else %}
+                    <div class="account-avatar account-avatar-placeholder">
+                        {{ profile.user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="account-info">
+                <h3 class="account-name">{{ profile.user.get_full_name|default:profile.user.username }}</h3>
+
+                {% if profile.accountType %}
+                    <span class="account-type-badge account-type-{{ profile.accountType.name|lower }}">
+                        {{ profile.accountType.name }}
+                    </span>
+                    {% if profile.accountType.name != "Buyer" and not profile.account_approved %}
+                        <span class="account-pending-badge">Pending Approval</span>
+                    {% endif %}
+                {% endif %}
+
+                <p class="account-email">{{ profile.user.email }}</p>
+
+                {% if profile.phone_number %}
+                    <p class="account-phone">{{ profile.phone_number }}</p>
+                {% endif %}
+
+                {% if profile.dob %}
+                <div class="account-dob">
+                    <p class="account-field-label">DATE OF BIRTH:</p>
+                    <p class="account-field-value">{{ profile.dob|date:"F d, Y" }}</p>
+                </div>
+                {% endif %}
+
+                {% if profile.business_name %}
+                <div class="account-business">
+                    <p class="account-field-label">BUSINESS NAME:</p>
+                    <p class="account-field-value">{{ profile.business_name }}</p>
+                </div>
+                {% endif %}
+
+                {% if profile.referral_code %}
+                <div class="account-referral">
+                    <p class="account-field-label">YOUR REFERRAL CODE:</p>
+                    <p class="account-field-value account-referral-code">{{ profile.referral_code }}</p>
+                </div>
+                {% endif %}
+
+                <a href="" class="account-edit-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="edit-icon"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/></svg>
+                    Edit
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT: SHIPPING INFO -->
+        <div class="account-shipping-col">
+            <h4 class="account-shipping-title">Shipping Information</h4>
+
+            {% if profile.shipping_address %}
+                <div class="account-shipping-box">
+                    <p>{{ profile.shipping_address }}</p>
+                    <a href="" class="account-shipping-edit-icon" title="Edit address">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/></svg>
+                    </a>
+                </div>
+            {% else %}
+                <div class="account-shipping-box account-shipping-empty">
+                    <p>No shipping address added yet.</p>
+                </div>
+            {% endif %}
+
+            <a href="" class="btn account-add-address-btn">Add a new shipping address</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock page_content %}

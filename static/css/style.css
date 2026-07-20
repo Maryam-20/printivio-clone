@@ -836,3 +836,193 @@ svg {
     padding: 4px;
     flex-shrink: 0;
 }
+
+/* ACCOUNT PROFILE STYLING */
+.account-page {
+    padding: 10px 0 80px;
+    margin: 2px 60px;
+}
+
+.account-title {
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    color: #384A62;
+    margin-bottom: 30px;
+}
+
+.account-tabs {
+    display: flex;
+    gap: 40px;
+}
+
+.account-tab {
+    color: #B0B8C2;
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.account-tab.active {
+    color: #363853;
+    border-bottom: 3px solid #d16b6b;
+}
+
+.account-tabs-divider {
+    margin-top: 10px;
+    border-top: 1px solid #B0B8C2;
+}
+/* LEFT SIDE AVATAR + BASIC INFO */
+.account-body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.account-profile-col {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.account-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.account-avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #384A62;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.account-name {
+    font-weight: 700;
+    color: #384A62;
+    font-family: "SF Pro", sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.account-type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #e8e6f5;
+    color: #363853;
+    margin-right: 8px;
+}
+
+.account-pending-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: #fdf0e0;
+    color: #b5751e;
+}
+
+.account-email, .account-phone {
+    color: #6A7D93;
+    margin: 8px 0 0;
+}
+
+.account-field-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6A7D93;
+    margin: 15px 0 2px;
+}
+
+.account-field-value {
+    color: #363853;
+    font-weight: 600;
+    margin: 0;
+}
+
+.account-referral-code {
+    letter-spacing: 2px;
+    background: #f0f0f0;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.account-edit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    color: #d16b6b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.edit-icon {
+    width: 16px;
+    height: 16px;
+    fill: #d16b6b;
+}
+/* RIGHT: SHIPPING INFO */
+.account-shipping-title {
+    font-weight: 700;
+    color: #384A62;
+    font-size: 16px;
+    font-family: "SF Pro", sans-serif;
+    margin-bottom: 15px;
+}
+
+.account-shipping-box {
+    position: relative;
+    background-color: #f7f5ee;
+    border: 1px solid #eee;
+    border-top: 1px solid #B0B8C2;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+.account-shipping-empty p {
+    color: #999;
+    margin: 0;
+}
+
+.account-shipping-edit-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.account-shipping-edit-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #363853;
+}
+
+.account-add-address-btn {
+    background-color: #d19a94;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.account-add-address-btn:hover {
+    background-color: #c08984;
+    color: #fff;
+}
