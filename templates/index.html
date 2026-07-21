@@ -27,7 +27,7 @@
                 {% endif %}
                 {% else %}
                 <li ><a href="{% url "login" %}" class="text-danger text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></li>
-                    <li><a href="">Create Account</a></li>
+                    <li><a href="{% url "signup" %}">Create Account</a></li>
                 {% endif %}
                     {% if request.user.is_staff and request.user.is_authenticated %}
                 <li class="dropdown">

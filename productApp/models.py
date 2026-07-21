@@ -18,7 +18,7 @@ class Product(models.Model):
     ]
 
     title = models.CharField(max_length= 100)
-    image = models.ImageField( upload_to= "product_image/", null=True, blank=True)
+    image = models.ImageField(upload_to="product_image/", null=True, blank=True)
     description = models.TextField()
     material = models.CharField(max_length=100)
     finishing = models.CharField(max_length=100)

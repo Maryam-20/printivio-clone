@@ -1,0 +1,88 @@
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
+{% load static %}
+
+<div class="content-container signup-page">
+    <div class="signup-grid">
+
+        <!-- LEFT: FORM -->
+        <div class="signup-form-col">
+            <h1 class="signup-title">Create Account</h1>
+            <p class="signup-subtitle">
+                Create an account to get your personal referral code to share with your friends.
+                Give your friends a 15% discount now, get as high as N1,000 when they place their first order. Everybody wins!
+            </p>
+
+            <form method="post" action="{% url 'signup' %}" class="signup-form">
+                {% csrf_token %}
+                
+                <div class="signup-form-row">
+                    <div class="signup-form-group">
+                        <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                        {{ form.first_name }}
+                        {% if form.first_name.errors %}
+                        <p class="signup-error">{{ form.first_name.errors.0 }}</p>{% endif %}
+                    </div>
+                    <div class="signup-form-group">
+                        <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                        {{ form.last_name }}
+                        {% if form.last_name.errors %}<p class="signup-error">{{ form.last_name.errors.0 }}</p>{% endif %}
+                    </div>
+                </div>
+
+                <div class="signup-form-row">
+                    <div class="signup-form-group">
+                        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}<p class="signup-error">{{ form.email.errors.0 }}</p>{% endif %}
+                    </div>
+                    <div class="signup-form-group">
+                        <label for="{{ form.phone_number.id_for_label }}">{{ form.phone_number.label }}</label>
+                        {{ form.phone_number }}
+                        {% if form.phone_number.errors %}<p class="signup-error">{{ form.phone_number.errors.0 }}</p>{% endif %}
+                    </div>
+                </div>
+
+                <div class="signup-form-row">
+                    <div class="signup-form-group">
+                        <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                        <div class="signup-password-wrap">
+                            {{ form.password1 }}
+                            <button type="button" class="signup-toggle-password" data-target="{{ form.password1.id_for_label }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="eye-icon"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/></svg>
+                            </button>
+                        </div>
+                        {% if form.password1.errors %}<p class="signup-error">{{ form.password1.errors.0 }}</p>{% endif %}
+                    </div>
+                    <div class="signup-form-group">
+                        <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                        <div class="signup-password-wrap">
+                            {{ form.password2 }}
+                            <button type="button" class="signup-toggle-password" data-target="{{ form.password2.id_for_label }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="eye-icon"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/></svg>
+                            </button>
+                        </div>
+                        {% if form.password2.errors %}<p class="signup-error">{{ form.password2.errors.0 }}</p>{% endif %}
+                    </div>
+                </div>
+
+                <button type="submit" class="btn signup-submit-btn">Create Account</button>
+            </form>
+        </div>
+
+        <!-- RIGHT: IMAGE -->
+        <div class="signup-image-col">
+            <img src="{% static 'images/Rectangle_62_ints6t.png' %}" alt="Business cards" class="signup-image">
+        </div>
+
+    </div>
+</div>
+<script>
+    document.querySelectorAll("signup-toggle-password").forEach(btn =>{
+        btn.addEventListener("click", function () {
+            const input = document.getElementById(this.dataset.target);
+            input.type = input.type === "password" ? "text" : "password";
+        })
+    })
+</script>
+{% endblock page_content %}

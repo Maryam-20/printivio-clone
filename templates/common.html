@@ -46,7 +46,7 @@
                             {% csrf_token %}
                             {{ login_form|crispy }}
                             <input type="hidden" name="next" value="{{ request.path }}">
-                            <p>Don't have an account? <span><a href="" class="text-danger">Create Account</a></span></p>
+                            <p>Don't have an account? <span><a href="{% url "signup" %}" class="text-danger">Create Account</a></span></p>
                             <p><a href="" class="forgotPassword">Forgot Password?</a></p>
                             <button type="submit" class="btn btn-dark w-50 p-3">Sign In</button>
                             </form>

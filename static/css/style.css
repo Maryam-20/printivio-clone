@@ -688,7 +688,7 @@ svg {
     margin-left: 40px;
 }
 .reseller-title {
-    font-family: "Fraunces", serif;
+    font-family: "DM Serif Display", serif;
     font-weight: 700;
     color: #363853;
     margin-bottom: 15px;
@@ -783,7 +783,7 @@ svg {
     position:relative;
     bottom: 9rem;
     left: 11rem;
-    font-family: "Fraunces", serif;
+    font-family: "DM Serif Display", serif;
     font-size: 24px;
     font-style: italic;
     font-weight:700;
@@ -1025,4 +1025,115 @@ svg {
 .account-add-address-btn:hover {
     background-color: #c08984;
     color: #fff;
+}
+
+/* CREATE ACCOUNT STYLING */
+.signup-page {
+    margin: 30px 55px;
+}
+.signup-form {
+    display: grid;
+}
+.signup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+
+.signup-title {
+    font-family: "SF Pro", sans-serif;
+    font-weight: 700;
+    color: #363853;
+    margin-bottom: 15px;
+}
+
+.signup-subtitle {
+    color: #6A7D93;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.signup-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.signup-form-group label {
+    display: block;
+    color: #363853;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.signup-form-group input[type="text"],
+.signup-form-group input[type="email"],
+.signup-form-group input[type="password"] {
+    width: 100%;
+    border-radius: 6px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.signup-form-group input:focus {
+    outline: none;
+    border-color: #363853;
+}
+
+.signup-password-wrap {
+    position: relative;
+}
+
+.signup-toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.eye-icon {
+    width: 20px;
+    height: 20px;
+    fill: #999;
+}
+
+.signup-error {
+    color: #d16b6b;
+    font-size: 0.8rem;
+    margin: 4px 0 0;
+}
+
+.signup-submit-btn {
+    background-color: #384A62;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 35%;
+    margin-top: 10px;
+    justify-self: flex-end;
+}
+
+.signup-submit-btn:hover {
+    background-color: #2a2c42;
+    color: #fff;
+}
+
+.signup-image-col {
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.signup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

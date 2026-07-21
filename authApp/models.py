@@ -26,7 +26,7 @@ class UserProfile(models.Model):
         ("sms", "SMS")
 
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True, related_name="user")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user")
     profile_image = models.ImageField(upload_to="profile_image/", null=True, blank=True)
     dob = models.DateField(null=True, blank=True)
     phone_number = models.CharField(max_length=11, null=True, blank=True)
