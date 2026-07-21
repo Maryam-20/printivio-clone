@@ -1,0 +1,19 @@
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
+{% load static %}
+
+<div class="content-container">
+    <div class="confirm-step-wrapper">
+        <div class="confirm-step-card">
+            <h2 class="confirm-step-title">One More Step!</h2>
+            <p class="confirm-step-text">
+                Thank you for joining our user community, kindly check your email to
+                confirm your membership and start enjoying our members only benefits
+            </p>
+            <a href="{% url 'home' %}" class="btn confirm-step-btn">Return Home</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock page_content %}

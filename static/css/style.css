@@ -1137,3 +1137,47 @@ svg {
     height: 100%;
     object-fit: cover;
 }
+
+/* VERIFY EMAIL PAGE STYLING */
+.confirm-step-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 100px;
+}
+
+.confirm-step-card {
+    background-color: #F7F4E4 ;
+    border-radius: 12px;
+    padding: 50px;
+    max-width: 550px;
+    width: 100%;
+}
+
+.confirm-step-title {
+    font-family: "SF Pro", serif;
+    font-weight: 700;
+    color: #2f9e5c;
+    margin-bottom: 20px;
+}
+
+.confirm-step-text {
+    color: #363853;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 420px;
+}
+
+.confirm-step-btn {
+    background-color: #2f9e5c;
+    color: #fff;
+    font-weight: 700;
+    padding: 7px 50px;
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.confirm-step-btn:hover {
+    background-color: #336a4f;
+    color: #fff;
+}

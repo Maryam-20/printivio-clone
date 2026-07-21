@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from .models import UserProfile
 from .forms import SignUpForm
@@ -10,7 +10,7 @@ def createAccountView(request):
       form = SignUpForm(request.POST)
       if form.is_valid():
          form.save()
-         return HttpResponse("Account Created Successfully!")
+         return redirect("verify-email")
    else:
       form = SignUpForm()
    return render(
@@ -22,6 +22,11 @@ def createAccountView(request):
       
    )
 
+def verifyEmailInfoView(request):
+   return render(
+      request,
+      template_name="authApp/verify_email.html"
+   )
 
 def ProfileView(request):
    profile = get_object_or_404(UserProfile, user=request.user)
