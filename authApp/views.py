@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from .models import UserProfile
-from .forms import SignUpForm
+from .forms import SignUpForm, UserEditForm, ProfileEditForm
 from django.http import HttpResponse
 
 # Create your views here.
@@ -37,3 +37,25 @@ def ProfileView(request):
       { "profile":profile}
     
    )
+
+def editProfileView(request):
+   profile = get_object_or_404(UserProfile, user=request.user)
+   if request.method == "POST":
+      user_form = UserEditForm(request.POST, instance=request.user)
+      profile_form = ProfileEditForm(request.POST, request.FILES, instance=profile)
+      if user_form.is_valid() and profile_form.is_valid():
+         user_form.save()
+         profile_form.save()
+         return redirect("myProfile")
+   else:
+      user_form = UserEditForm(instance=request.user)
+      profile_form = ProfileEditForm(instance=profile)
+      return render(
+         request,
+         template_name="authApp/edit_profile.html",
+         context= {
+            "user_form":user_form,
+            "profile_form":profile_form,
+            "profile":profile
+         }
+      )

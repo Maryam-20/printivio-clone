@@ -23,7 +23,19 @@
                     </form>
                 </li>
                 {% if not request.user.is_staff %}
-                <li ><a href="{% url "logout" %}" class="text-danger">Profile</a></li>
+                <li class="dropdown">
+                    <p class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="">{{request.user.first_name}}</a>
+                    </p>
+
+                    <ul class="dropdown-menu w-75">
+                        <li>My Account</li>
+                        <li><a href="{% url "myProfile" %}">Profile</a></li>
+                        <li><a href="">My Saved Designs</a></li>
+                        <li><a href="">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Order History</a></li>
+                    </ul>
+                </li>
                 {% endif %}
                 {% else %}
                 <li ><a href="{% url "login" %}" class="text-danger text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></li>

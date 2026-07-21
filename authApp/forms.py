@@ -68,3 +68,36 @@ class SignUpForm(UserCreationForm):
         )
         return user
     
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
+        labels = {
+            "first_name": "Your Name",
+            "last_name": "Your Surname",
+            "email": "Email Address",
+        }
+        widgets = {
+            "first_name": forms.TextInput(attrs={"placeholder": "Enter your name"}),
+            "last_name": forms.TextInput(attrs={"placeholder": "Enter your surname"}),
+            "email": forms.EmailInput(attrs={"placeholder": "Enter your email"}),
+        }
+
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ["profile_image", "dob", "phone_number", "alternative_phone_number", "shipping_address"]
+        labels = {
+            "profile_image": "Profile Picture",
+            "dob": "Date of Birth",
+            "phone_number": "Phone Number",
+            "alternative_phone_number": "Alternative Phone Number",
+            "shipping_address": "Shipping Address",
+        }
+        widgets = {
+            "dob": forms.DateInput(attrs={"type": "date"}),
+            "phone_number": forms.TextInput(attrs={"placeholder": "Enter your phone number"}),
+            "alternative_phone_number": forms.TextInput(attrs={"placeholder": "Enter an alternative number"}),
+            "shipping_address": forms.Textarea(attrs={"rows": 3, "placeholder": "Enter your shipping address"}),
+        }

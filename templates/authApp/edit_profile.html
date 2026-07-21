@@ -1,0 +1,106 @@
+{% extends "common.html" %}
+{% block content %}
+{% load static %}
+
+<div class="content-container account-page">
+
+    <h1 class="account-title">My Account</h1>
+
+    <!-- TABS -->
+    <div class="account-tabs">
+        <a href="{% url 'myProfile' %}" class="account-tab active">My Profile</a>
+        <a href="" class="account-tab">My Saved Designs</a>
+        <a href="" class="account-tab">Account Settings</a>
+        <a href="" class="account-tab">Order History</a>
+    </div>
+    <hr class="account-tabs-divider">
+
+
+
+    <div class="edit-profile-wrapper">
+        <h3 class="edit-profile-heading">Edit Your Profile</h3>
+
+        <form method="post" enctype="multipart/form-data" action="{% url 'edit-profile' %}" class="edit-profile-form">
+            {% csrf_token %}
+
+            <!-- PROFILE IMAGE -->
+            <div class="edit-avatar-row">
+                <div class="edit-avatar-preview">
+                    {% if profile.profile_image %}
+                        <img src="{{ profile.profile_image.url }}" alt="Profile picture" id="avatar-preview-img">
+                    {% else %}
+                        <div class="edit-avatar-placeholder" id="avatar-preview-placeholder">
+                            {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="edit-avatar-upload">
+                    <label for="{{ profile_form.profile_image.id_for_label }}" class="edit-avatar-upload-label">
+                        Change Photo
+                    </label>
+                    {{ profile_form.profile_image }}
+                    {% if profile_form.profile_image.errors %}
+                        <p class="edit-error">{{ profile_form.profile_image.errors.0 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- NAME / SURNAME -->
+            <div class="edit-form-row">
+                <div class="edit-form-group">
+                    <label for="{{ user_form.first_name.id_for_label }}">{{ user_form.first_name.label }}</label>
+                    {{ user_form.first_name }}
+                    {% if user_form.first_name.errors %}<p class="edit-error">{{ user_form.first_name.errors.0 }}</p>{% endif %}
+                </div>
+                <div class="edit-form-group">
+                    <label for="{{ user_form.last_name.id_for_label }}">{{ user_form.last_name.label }}</label>
+                    {{ user_form.last_name }}
+                    {% if user_form.last_name.errors %}<p class="edit-error">{{ user_form.last_name.errors.0 }}</p>{% endif %}
+                </div>
+            </div>
+
+            <!-- EMAIL / DOB -->
+            <div class="edit-form-row">
+                <div class="edit-form-group">
+                    <label for="{{ user_form.email.id_for_label }}">{{ user_form.email.label }}</label>
+                    {{ user_form.email }}
+                    {% if user_form.email.errors %}<p class="edit-error">{{ user_form.email.errors.0 }}</p>{% endif %}
+                </div>
+                <div class="edit-form-group">
+                    <label for="{{ profile_form.dob.id_for_label }}">{{ profile_form.dob.label }}</label>
+                    {{ profile_form.dob }}
+                    {% if profile_form.dob.errors %}<p class="edit-error">{{ profile_form.dob.errors.0 }}</p>{% endif %}
+                </div>
+            </div>
+
+            <!-- PHONE / ALT PHONE -->
+            <div class="edit-form-row">
+                <div class="edit-form-group">
+                    <label for="{{ profile_form.phone_number.id_for_label }}">{{ profile_form.phone_number.label }}</label>
+                    {{ profile_form.phone_number }}
+                    {% if profile_form.phone_number.errors %}<p class="edit-error">{{ profile_form.phone_number.errors.0 }}</p>{% endif %}
+                </div>
+                <div class="edit-form-group">
+                    <label for="{{ profile_form.alternative_phone_number.id_for_label }}">{{ profile_form.alternative_phone_number.label }}</label>
+                    {{ profile_form.alternative_phone_number }}
+                    {% if profile_form.alternative_phone_number.errors %}<p class="edit-error">{{ profile_form.alternative_phone_number.errors.0 }}</p>{% endif %}
+                </div>
+            </div>
+
+            <!-- SHIPPING ADDRESS -->
+            <div class="edit-form-group edit-form-group-full">
+                <label for="{{ profile_form.shipping_address.id_for_label }}">{{ profile_form.shipping_address.label }}</label>
+                {{ profile_form.shipping_address }}
+                {% if profile_form.shipping_address.errors %}<p class="edit-error">{{ profile_form.shipping_address.errors.0 }}</p>{% endif %}
+            </div>
+
+            <div class="edit-form-actions">
+                <a href="{% url 'myProfile' %}" class="btn edit-cancel-btn">Cancel</a>
+                <button type="submit" class="btn edit-save-btn">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}
