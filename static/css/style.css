@@ -1308,3 +1308,114 @@ svg {
     background-color: #f5f5f5;
     color: #363853;
 }
+
+/* FORGOT PASSWORD RESET MODAL STYLING */
+.forgot-password-title {
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    color: #363853;
+    margin: 0;
+}
+
+.forgot-password-close {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.forgot-password-close svg {
+    width: 18px;
+    height: 18px;
+    fill: #363853;
+}
+
+.forgot-password-banner {
+    background-color: #363853;
+    color: #fff;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.forgot-password-banner p {
+    margin: 0;
+    font-weight: 600;
+    max-width: 480px;
+}
+
+.forgot-password-lock-icon {
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.forgot-password-lock-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+}
+
+.forgot-password-body {
+    padding: 25px 30px 10px;
+}
+
+.forgot-password-body label {
+    display: block;
+    color: #363853;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.forgot-password-body input {
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 14px 15px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.forgot-password-body input:focus {
+    outline: none;
+    border-color: #363853;
+}
+
+.forgot-password-error {
+    color: #d16b6b;
+    font-size: 0.85rem;
+    margin: 8px 0 0;
+}
+
+.forgot-password-footer {
+    background-color: #F7F4E4;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.forgot-password-submit-btn {
+    background-color: #d19a94;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 40px;
+    border-radius: 6px;
+}
+
+.forgot-password-submit-btn:hover {
+    background-color: #c08984;
+    color: #fff;
+}
