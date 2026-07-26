@@ -23,7 +23,7 @@ class Product(models.Model):
     material = models.CharField(max_length=100)
     finishing = models.CharField(max_length=100)
     quantity_inStock = models.PositiveIntegerField(default = 0)
-    quantity_per_order = models.PositiveBigIntegerField(default=0)
+    quantity_per_order = models.PositiveBigIntegerField(default=0) #MINIMUM QUANTITY PER ORDER
     status = models.CharField(max_length=50, choices = STATUS_CHOICES, default= "IN_STOCK")
     price_per_unit = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     price_per_quantityOrder = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)

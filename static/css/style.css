@@ -1419,3 +1419,210 @@ svg {
     background-color: #c08984;
     color: #fff;
 }
+
+/* DESIGN OPTIONS PAGE STYLING */
+.design-request-page {
+    padding: 40px 0 50px;
+}
+
+.design-request-title {
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    color: #363853;
+    margin-bottom: 20px;
+}
+
+.design-request-subtitle {
+    font-weight: 700;
+    color: #363853;
+    margin-bottom: 40px;
+}
+
+.design-request-options {
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 60px;
+    gap: 30px;
+}
+
+.design-option-card {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.design-option-icon {
+    width: 60px;
+    height: 60px;
+    fill: #6A7D93;
+    margin-bottom: 25px;
+}
+
+.design-option-text {
+    color: #363853;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.design-option-btn {
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.design-upload-btn {
+    background-color: #d19a94;
+}
+.design-upload-btn:hover {
+    background-color: #c08984;
+    color: #fff;
+}
+
+.design-dark-btn {
+    background-color: #363853;
+    text-decoration: none;
+}
+.design-dark-btn:hover {
+    background-color: #2a2c42;
+    color: #fff;
+}
+
+/* Upload modal */
+.upload-design-modal {
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-design-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.upload-design-title {
+    font-family: "DM Serif Display", serif;
+    font-weight: 700;
+    color: #363853;
+    margin: 0;
+}
+
+.upload-design-close {
+    background-color: #6A7D93;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.upload-design-close svg {
+    width: 18px;
+    height: 18px;
+    fill: #363853;
+}
+
+.upload-design-dropzone {
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    background-color: #FAF8F0;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-design-icon {
+    width: 50px;
+    height: 50px;
+    fill: #6A7D93;
+    margin-bottom: 20px;
+}
+
+.upload-design-drop-text {
+    color: #363853;
+    font-weight: 600;
+    margin: 0;
+}
+
+.upload-design-click-here {
+    color: #d16b6b;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.upload-design-file-list {
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    background-color: #FAF8F0;
+    padding: 25px 30px;
+}
+
+.upload-design-file-list-label {
+    font-weight: 700;
+    color: #363853;
+    margin-bottom: 15px;
+}
+
+.upload-design-file-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-design-file-name {
+    color: #6A7D93;
+    font-weight: 600;
+}
+
+.upload-design-file-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.upload-design-file-delete svg {
+    width: 20px;
+    height: 20px;
+    fill: #6A7D93;
+}
+
+.upload-design-footer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.upload-design-submit-btn {
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 20px;
+    border:1px solid #c08984;
+    border-radius: 2px;
+    background-color: #c08984;
+}
+
+.upload-design-submit-btn:hover:not(:disabled) {
+    background-color: #c08984;
+    color: #fff;
+}
+
+.upload-design-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

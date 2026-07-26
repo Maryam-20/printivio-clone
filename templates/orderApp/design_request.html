@@ -1,0 +1,89 @@
+{% extends "lightHeroNav.html" %}
+{% block page_content %}
+{% load static %}
+
+
+<div class="hero-search-row">
+    <div class="hero-nav-search">
+        <input type="search" placeholder="Search for any product">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="search-icon"><title>magnify</title><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+    </div>
+    
+</div>
+
+<div class="content-container design-request-page">
+
+    <h1 class="design-request-title mx-5">{{ product.title }}, Design Request</h1>
+    <p class="design-request-subtitle mx-5">Now all we need is the design file to print on your {{ product.title }}</p>
+
+    <div class="design-request-options container">
+
+        <!-- OPTION 1: UPLOAD -->
+        <div class="design-option-card container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="design-option-icon"><path d="M11,15H13V9H16L12,4L8,9H11V15M20,18H4V8H2V18C2,19.11 2.9,20 4,20H20C21.1,20 22,19.11 22,18V8H20V18Z"/></svg>
+            <p class="design-option-text">Upload your own design file.<br>PNG, JPEG, PSD, AI, etc</p>
+            <button type="button" class="btn design-option-btn design-upload-btn" data-bs-toggle="modal" data-bs-target="#uploadDesignModal">Upload</button>
+        </div>
+
+        <!-- OPTION 2: CREATE YOURSELF -->
+        <div class="design-option-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="design-option-icon"><path d="M20.71,4.63L19.37,3.29C19,2.9 18.35,2.9 17.96,3.29L9,12.25L11.75,15L20.71,6.04C21.1,5.65 21.1,5 20.71,4.63M7,14A3,3 0 0,0 4,17C4,18.31 2.84,19 2,19C2.92,20.22 4.5,21 6,21A4,4 0 0,0 10,17A3,3 0 0,0 7,14Z"/></svg>
+            <p class="design-option-text">Get creative. Design with our<br>online tools and templates</p>
+            <a href="" class="btn design-option-btn design-dark-btn">Create Yourself</a>
+        </div>
+
+        <!-- OPTION 3: SEND A REQUEST -->
+        <div class="design-option-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="design-option-icon"><path d="M2.01,21L23,12L2.01,3L2,10L17,12L2,14L2.01,21Z"/></svg>
+            <p class="design-option-text">Let our creative team provide<br>an awesome design for you</p>
+            <a href="" class="btn design-option-btn design-dark-btn">Send a Request</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- UPLOAD DESIGN MODAL -->
+<div class="modal fade" id="uploadDesignModal" tabindex="-1" aria-labelledby="uploadDesignModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content upload-design-modal">
+
+            <div class="upload-design-header">
+                <h4 class="upload-design-title" id="uploadDesignModalLabel">Upload your design</h4>
+                <button type="button" class="upload-design-close" data-bs-dismiss="modal" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/></svg>
+                </button>
+            </div>
+
+            <form method="post" action="" enctype="multipart/form-data" id="uploadDesignForm">
+                {% csrf_token %}
+
+                <!-- STATE 1: DRAG & DROP (shown by default) -->
+                <div class="upload-design-dropzone" id="uploadDropzone">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="upload-design-icon"><path d="M11,15H13V9H16L12,4L8,9H11V15M20,18H4V8H2V18C2,19.11 2.9,20 4,20H20C21.1,20 22,19.11 22,18V8H20V18Z"/></svg>
+                    <p class="upload-design-drop-text">
+                        Drag and drop to upload<br>
+                        or <label for="designFileInput" class="upload-design-click-here">click here</label> to select files from your system
+                    </p>
+                    <input type="file" name="design_file" id="designFileInput" class="upload-design-file-input" accept=".png,.jpg,.jpeg,.psd,.ai" hidden>
+                </div>
+
+                <!-- STATE 2: FILE SELECTED (hidden by default) -->
+                <div class="upload-design-file-list" id="uploadFileList" style="display: none;">
+                    <p class="upload-design-file-list-label">Uploading File</p>
+                    <div class="upload-design-file-row">
+                        <span class="upload-design-file-name" id="uploadFileName"></span>
+                        <button type="button" class="upload-design-file-delete" id="removeFileBtn" aria-label="Remove file">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="upload-design-footer">
+                    <button type="button" class="btn upload-design-submit-btn" id="uploadSubmitBtn" disabled>Upload</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock page_content %}
