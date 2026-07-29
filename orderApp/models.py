@@ -4,15 +4,17 @@ from productApp.models import Product
 
 # Create your models here.
 class DesignFile(models.Model):
-    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name="design_file")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="design_file", null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="design_file")
     design_file = models.FileField(upload_to="design_files/", null=True, blank=True)
+    session_key = models.CharField(max_length=40, null=True, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.design_file.name if self.design_file else f"Design for {self.user.get_full_name()}"
-
+        if self.design_file:
+            return self.design_file.name
+        return f"Design for {self.user.get_full_name()}" if self.user else "Design (anonymous)"
 
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="cart")
