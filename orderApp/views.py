@@ -149,8 +149,6 @@ def calculate_price(request, product_id):
         base_total = product.price_per_unit * quantity
         five_percent_value = base_total * Decimal('0.05')
         total_price = base_total - five_percent_value
-        print(f"PRICE PER UNIT", )
-        print(F"TOTAL PRICE {total_price}")
     else:
         total_price = Decimal('0.00')
 

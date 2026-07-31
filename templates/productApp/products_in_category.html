@@ -1,6 +1,7 @@
 {% extends "lightHeroNav.html" %}
 {% block page_content %}
 {% load static %}
+{% load humanize %}
 
 <!-- CATEGORY HERO BANNER -->
 <section class=" container category-hero py-5">
@@ -35,7 +36,7 @@
                 {% if product.original_price %}
                     <span class="text-decoration-line-through text-muted fs-6 me-2">₦{{ product.original_price }}</span>
                 {% endif %}
-                ₦{{ product.price }}
+                ₦{{ product.price_moq|intcomma }}
             </p>
 
             <a href="{% url 'productDetails' product.id %}" class="btn btn-danger w-100 w-sm-auto">Order Now &gt;</a>

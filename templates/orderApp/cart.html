@@ -1,6 +1,7 @@
 {% extends "lightHeroNav.html" %}
 {% block page_content %}
 {% load static %}
+{% load humanize %}
 
 <div class="hero-search-row">
     <div class="hero-nav-search">
@@ -50,7 +51,7 @@
                     <div class="cart-item-price">
                         <label for="quantity">Price</label>
                         {% if item.price %}
-                            <p class="cart-item-price-current" id="price-display-{{ item.product.id }}">₦{{ item.price|floatformat:0 }}</p>
+                            <p class="cart-item-price-current" id="price-display-{{ item.product.id }}">₦{{ item.price|floatformat:0|intcomma }}</p>
                         {% else %}
                             <p class="cart-item-price-current cart-item-price-muted" id="price-display-{{ item.product.id }}">Price unavailable</p>
                         {% endif %}
