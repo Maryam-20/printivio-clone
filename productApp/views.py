@@ -1,8 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from .forms import *
+from django.contrib.auth.decorators import user_passes_test
 
 # Create your views here.
+def staff_auth(user):
+   return user.is_authenticated and user.is_staff
+
 # HOME PAGE LOAD
 def homePageView(request):
     products = Product.objects.all().order_by("?")
@@ -46,6 +50,7 @@ def singleProductView(request, id):
 )
 
 # FOR ADDING NEW PRODUCT CATEGORY
+@user_passes_test(staff_auth)
 def addCategory(request):
     if request.method == "POST":
       form = CategoryForm(request.POST)
@@ -64,6 +69,7 @@ def addCategory(request):
         )
 
 # FOR ADDING NEW PRODUCT TO PRODUCTS DB 
+@user_passes_test(staff_auth)
 def addProduct(request):
     if request.method == "POST":
       form = ProductForm(request.POST, request.FILES)
