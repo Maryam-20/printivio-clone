@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 from .forms import SignUpForm, UserEditForm, ProfileEditForm
 from django.http import HttpResponse
+from django.contrib import messages
 
 # Create your views here.
 def createAccountView(request):
@@ -10,7 +11,11 @@ def createAccountView(request):
       form = SignUpForm(request.POST)
       if form.is_valid():
          form.save()
+         messages.success(request, "Account Created Successfully")
          return redirect("verify-email")
+      else:
+         messages.error(request, "Invalid form submission. Please try again.")
+         return redirect("signup")
    else:
       form = SignUpForm()
    return render(
@@ -46,7 +51,11 @@ def editProfileView(request):
       if user_form.is_valid() and profile_form.is_valid():
          user_form.save()
          profile_form.save()
+         messages.success(request, "Profile Updated Successfully")
          return redirect("myProfile")
+      else:
+         messages.error(request, "An Error Occurred")
+         return redirect("edit-profile")
    else:
       user_form = UserEditForm(instance=request.user)
       profile_form = ProfileEditForm(instance=profile)

@@ -57,6 +57,13 @@
         </div>
 
     </nav>
+    <div class="p-2 fixed-bottom ms-auto" style="width:fit-content;">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+            </div>
+        {% endfor %}
+    </div>
     {% block content %}{% endblock content %}
 
 

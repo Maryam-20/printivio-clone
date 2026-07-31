@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import user_passes_test
+from django.contrib import messages
 
 # Create your views here.
 def staff_auth(user):
@@ -53,10 +54,13 @@ def singleProductView(request, id):
 @user_passes_test(staff_auth)
 def addCategory(request):
     if request.method == "POST":
-      form = CategoryForm(request.POST)
-      if form.is_valid():
-          form.save()
-      return redirect("allProducts")
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Category Created Successfully")
+        else:
+            messages.error(request, "An Error occurred")
+        return redirect("allProducts")
     
     else:
         form = CategoryForm
@@ -72,10 +76,13 @@ def addCategory(request):
 @user_passes_test(staff_auth)
 def addProduct(request):
     if request.method == "POST":
-      form = ProductForm(request.POST, request.FILES)
-      if form.is_valid():
-          form.save()
-      return redirect("home")
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Product Created Successfully")
+        else:
+            messages.error(request, "An Error Occurred")
+        return redirect("home")
     else:
         form = ProductForm
         return render(
