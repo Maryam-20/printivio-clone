@@ -166,20 +166,18 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Media storage: Cloudinary in production, local disk in development
-CLOUDINARY_CLOUD_NAME = config("CLOUDINARY_CLOUD_NAME", default=None)
+CLOUDINARY_CLOUD_NAME = config("CLOUDINARY_CLOUD_NAME", default="").strip()
 
 if CLOUDINARY_CLOUD_NAME:
-    # Production (Render) — media routed to Cloudinary, since Render's disk is ephemeral
+    # Production (Render)
     CLOUDINARY_STORAGE = {
         "CLOUD_NAME": CLOUDINARY_CLOUD_NAME,
         "API_KEY": config("CLOUDINARY_API_KEY"),
         "API_SECRET": config("CLOUDINARY_API_SECRET"),
-        "STATICFILES_MANIFEST_ROOT": BASE_DIR / "staticfiles",
     }
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-    MEDIA_URL = "/media/"
 else:
-    # Local development — plain local disk
+    # Local development
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
 
