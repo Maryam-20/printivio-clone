@@ -168,21 +168,22 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Media storage: Cloudinary in production, local disk in development
 CLOUDINARY_CLOUD_NAME = config("CLOUDINARY_CLOUD_NAME", default=None)
 
-# Add these lines to debug in Render Logs:
-print("=" * 40)
-print(f"DEBUG: CLOUDINARY_CLOUD_NAME is -> '{CLOUDINARY_CLOUD_NAME}'")
-print("=" * 40)
-
 if CLOUDINARY_CLOUD_NAME:
-    print("DEBUG: Active Storage -> Cloudinary")
     CLOUDINARY_STORAGE = {
         "CLOUD_NAME": CLOUDINARY_CLOUD_NAME,
         "API_KEY": config("CLOUDINARY_API_KEY"),
         "API_SECRET": config("CLOUDINARY_API_SECRET"),
     }
+    STORAGES = {
+        "default": {
+            "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 else:
-    print("DEBUG: Active Storage -> Local Disk (/media/)")
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
 
