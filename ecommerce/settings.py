@@ -155,10 +155,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# Temporary change in settings.py:
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Media storage: Cloudinary in production, local disk in development
 CLOUDINARY_CLOUD_NAME = config("CLOUDINARY_CLOUD_NAME", default=None)
@@ -169,6 +171,7 @@ if CLOUDINARY_CLOUD_NAME:
         "CLOUD_NAME": CLOUDINARY_CLOUD_NAME,
         "API_KEY": config("CLOUDINARY_API_KEY"),
         "API_SECRET": config("CLOUDINARY_API_SECRET"),
+        "STATICFILES_MANIFEST_ROOT": BASE_DIR / "staticfiles",
     }
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
     MEDIA_URL = "/media/"
