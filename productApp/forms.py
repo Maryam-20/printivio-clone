@@ -14,14 +14,10 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = [
-            "title",
-            "description",
-            "material",
-            "finishing",
-           "quantity_inStock",
-           "quantity_per_order",
-           "price_per_unit",
-           "price_per_quantityOrder",
-            "category",
-            "image"
+            "title", "description","material", "finishing", "quantity_in_stock","minimum_quantity_per_order","price_per_unit", "category", "image"
         ]
+
+class ProductQuantityOrderOptionsForm(forms.ModelForm):
+    class Meta:
+        model = ProductQuantityOrderOptions
+        fields ="__all__"

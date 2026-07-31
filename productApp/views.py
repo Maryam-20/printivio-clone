@@ -7,7 +7,6 @@ from .forms import *
 def homePageView(request):
     products = Product.objects.all().order_by("?")
     categories = Category.objects.filter(prod__isnull=False).distinct().order_by("?").prefetch_related("prod")[:3]
-    print("CATEGORIESSSSSS", categories)
     return render(
         request, 
         template_name='index.html',
@@ -23,7 +22,6 @@ def allProductView(request):
     category_param = request.GET.get('category')
     if category_param and category_param.lower() != "all":
         products = Product.objects.filter(category__name = category_param)
-        print(products)
     else:
         products = Product.objects.all()
     return render(
@@ -85,12 +83,14 @@ def addProduct(request):
 def browseProducts_inCategory(request):
     category_name_param = request.GET.get("category_name")
     category  = get_object_or_404(Category, name=category_name_param)
+    first_product = category.prod.first()
     products_in_category = category.prod.all()
     return render(
         request,
         template_name="productApp/products_in_category.html",
         context={
             'category':category,
+            "first_product":first_product,
             "products_in_category":products_in_category
         }
     )
