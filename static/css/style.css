@@ -70,14 +70,15 @@ svg {
 /* HERO SECTION STYLING */
 .hero {
     background-color: #ECE8D9;
+    margin-top: 30px;
 
 }
 .hero-nav {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    margin: 2px auto;
-    gap: 0.5rem;
+    margin-top: 2px;
 }
+
 .printivo-img div{
     height: 4rem;
 }
@@ -104,8 +105,8 @@ svg {
     text-decoration: none;
     color: #6A7D93;
     font-weight: 700;
-    letter-spacing: 0.09em;
-    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    font-size: 0.7rem;
 
 }
 .d-inline {
@@ -177,9 +178,15 @@ svg {
     margin-top: 30px;
 }
 
-/* POPULAR PRODUCT STYLING */
+/* POPULAR PRODUCT AND CATEGORY STYLING */
 .popularProduct-container, .popularCategory-container{
     margin-top: 4rem;
+}
+.popularCategory-container {
+    width: 98%;
+}
+.col {
+    width: 30vw;
 }
 .productTitle, .productCategory{
     display: flex;
@@ -198,7 +205,7 @@ svg {
 
 .productTitle p a, .productCategory p a {
     position: relative;
-    right: 55px;
+    right: 60px;
     color: #D77F81;
     font-family: "SF Pro", sans-serif;
     text-decoration: none;
@@ -208,7 +215,7 @@ svg {
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 5rem;
     margin: 0 40px;
 }
 .card {
@@ -245,7 +252,6 @@ svg {
     color: #ffffff;
     font-family: "SF Pro", sans-serif;
     font-weight: 600;
-    
 }
 
 .starting-at {
@@ -253,6 +259,9 @@ svg {
     font-family: 'SF Pro', sans-serif;
     font-weight: 700;
     font-size: 12.8px;
+}
+.row .row {
+    width: 95%;
 }
 .row .row , .row .row .col{
     margin-top: 5px;
@@ -264,8 +273,9 @@ svg {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     width: 80%;
-    height: 70dvh;
+    height: 100dvh;
     margin: auto;
+
 }
 .productImage img {
     width: 70%;
@@ -564,25 +574,21 @@ svg {
 
 /* BROWSE ALL PRODUCTS IN A CATEGORY PAGE*/
 .category-hero {
-    background-color: #363853; 
-    color: #fff;
-    padding: 60px 40px;
-    border-radius: 12px;
-    margin: 30px auto;
-    max-width: 1200px;
+    background-color: #2a2c42;
 }
-
 .category-hero-title {
     font-family: "DM Serif Display", serif; 
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .category-hero-tagline {
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .category-hero-description {
@@ -592,11 +598,11 @@ svg {
 }
 
 .category-hero-btn {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #363853;
     font-weight: 600;
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: 3px;
     text-decoration: none;
     display: inline-block;
 }
@@ -669,9 +675,29 @@ svg {
     margin-left: 40px;
 }
 .container-fluid {
-    margin-top: 50px;
+    margin-top: 30px;
 }
+.productsContainer .card{
+    width: 18rem;
+    /* margin-top: 20px; */
+    /* margin-top: 40px; */
+}
+.productsContainer .col {
+    margin-bottom: 15px;
+    /* padding: 20px; */
+    /* width: 50vw; */
+    max-width: fit-content;
 
+}
+.productsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-width: fit-content;
+    /* margin-left: 30px; */
+    /* gap:20px */
+    /* padding-top: 20px; */
+    /* max-width: 80vw; */
+}
 
 /* BECOME A RESELLER PAGE */
 .reseller-page {
@@ -1039,7 +1065,6 @@ svg {
     grid-template-columns: 1fr 1fr;
     gap: 100px;
 }
-
 
 .signup-title {
     font-family: "SF Pro", sans-serif;
@@ -1844,4 +1869,444 @@ svg {
     color: #6A7D93;
     font-weight: 600;
     margin-top: 15px;
+}
+
+
+
+/* RESPONSIVE MEDIA QUERIES*/
+
+@media (max-width: 1024px) {
+    /* NAV */
+    .child-list2 li {
+        margin-right: 20px;
+    }
+    /* Hero Section */
+    .hero {
+        margin-top: 45px;
+    }
+    .navList-item1 li, .navList-item2 li{
+        margin: 2px;
+    }
+    .navList-item1 li a, .navList-item2 li a {
+        letter-spacing: 0.03em;
+        font-size: 0.6rem;
+    }
+    .hero-navList-container {
+        margin: 5px 0.5px;
+    }
+    .hero-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .hero-main-text div {
+        margin-left: 0;
+        font-size: 48px;
+    }
+    .hero-main-text p, .shipped-text {
+        margin-left: 0;
+        justify-content: center;
+    }
+    .hero-main-searchContainer {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .hero-main-hand {
+        display: none;
+    }
+
+    /* Product Cards */
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 20px;
+    }
+    .col {
+        width: 40vw;
+    }
+
+    /* Footer */
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 40px;
+    }
+    .footer-container {
+        height: auto;
+    }
+    /* All Product Page */
+    .productsContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Reseller Page */
+    .reseller-form-part-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .reseller-form-col, .reseller-promo-col {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .reseller-promo-banner {
+        margin-top: 30px;
+    }
+    
+    /* Sign Up / Account */
+    .signup-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .account-body {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cart page */
+    .cart-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .cart-added-banner {
+        width: 100% !important;
+        margin: 0;
+    }
+    .cart-item-main {
+        grid-template-columns: 80px 1fr;
+        row-gap: 15px;
+    }
+    .cart-item-img {
+        width: 80px;
+        height: 80px;
+    }
+    .cart-item-qty, .cart-item-price, .cart-item-delete {
+        grid-column: 2;
+    }
+    .cart-add-more-div {
+        width: 100% !important;
+    }
+
+    /* Design request page */
+    .design-request-options {
+        width: 90vw;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+    }
+
+    /* Edit profile */
+    .edit-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+    
+
+
+/* MOBILE DEVICES (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .child-list1, .child-list2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: 0;
+        padding-left: 0;
+    }
+    .child-list2 li {
+        margin-right: 15px;
+    }
+    .hero-nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-navList-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-nav img {
+        margin: 10px auto;
+    }
+    .navList-item1, .navList-item2 {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    
+    /* Hero Search Bar */
+    .hero-main-searchContainer input {
+        width: 100%;
+        padding-left: 10px;
+    }
+    .hero-search-row {
+        position: static;
+        padding: 10px 20px;
+    }
+    .hero-nav-search input {
+        width: 100%;
+    }
+    .all-products-title {
+        position: static;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    /* Typography & Headers */
+    .productTitle h2, .productCategory h2 {
+        left: 20px;
+        font-size: 24px;
+    }
+    .productTitle p a, .productCategory p a {
+        right: 20px;
+    }
+    
+    /* Product Cards Grid */
+    .card-container {
+        grid-template-columns: 1fr;
+        margin: 0 15px;
+    }
+    .col {
+       width: 45vw;
+}
+    .card img {
+        width: 80%;
+        height: auto;
+    }
+    
+    /* Single Product Page */
+    .productDetailContainer {
+        grid-template-columns: 1fr;
+        width: 95%;
+        height: auto;
+    }
+    .productImage img {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+    /* Trusted Companies */
+    .trusted-companies {
+        height: auto;
+        padding: 30px 0;
+    }
+    .nigeria, .print, .trusted-companies img {
+        margin-left: 15px;
+        width: 90%;
+    }
+    .nigeria {
+        font-size: 24px;
+    }
+    
+    /* Reviews Section */
+    .review-parent-container {
+        height: auto;
+        padding-bottom: 40px;
+        margin-top: 3rem;
+    }
+    .review-title {
+        padding-top: 2rem;
+        margin-left: 15px;
+    }
+    .review-parent-container .card-container {
+        flex-direction: column;
+        margin-left: 15px;
+        gap: 20px;
+    }
+    .child-card {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Count On Us Section */
+    .countContainer {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .countContainer .card-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .count-on-text {
+        margin-left: 15px;
+        margin-top: 2rem;
+    }
+    .text-container .text {
+        width: 100%;
+    }
+    
+    /* Amazing Works Noticed */
+    .noticed-by-container {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .companies-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .companies:last-child {
+        align-self: center;
+    }
+    
+    /* Footer Mobile */
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .title p, .accepted-payment, .delivery {
+        margin-left: 0;
+    }
+    .social-handles ul {
+        justify-content: center;
+        padding: 0;
+    }
+    .payment-options img, .delivery-partner img {
+        margin-left: 0;
+    }
+
+    /* All Product Page */
+    .productsContainer {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Reseller Forms */
+    .reseller-form-row {
+        grid-template-columns: 1fr;
+    }
+    .reseller-form-footer {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .reseller-promo-banner {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 20px;
+    }
+    .reseller-promo-text {
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .reseller-promo-percent {
+        margin-top: 0;
+    }
+    .reseller-promo-off, .reseller-promo-desc {
+        position: static;
+        margin: 10px auto;
+    }
+    .reseller-promo-img {
+        align-self: center;
+    }
+    
+    /* Account Profile */
+    .account-page {
+        margin: 2px 15px;
+    }
+    .account-tabs {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .account-profile-col {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .account-avatar {
+        margin: 0 auto;
+    }
+    .account-edit-link {
+        justify-content: center;
+    }
+
+    /* Cart page */
+    .cart-page { padding: 20px 0 40px; }
+    .cart-added-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .cart-suggested-item {
+        grid-template-columns: 60px 1fr;
+        row-gap: 10px;
+    }
+    .cart-suggested-item form {
+        grid-column: 2;
+    }
+    .cart-item-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .cart-item-qty, .cart-item-price, .cart-item-delete {
+        grid-column: 1;
+    }
+    .cart-item-img {
+        margin: 0 auto;
+    }
+
+    /* Design request page */
+    .design-request-title, .design-request-subtitle {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .design-request-options {
+        width: 90vw;
+        grid-template-columns: 1fr;
+        margin-left: 20px;
+    }
+    .upload-design-dropzone {
+        padding: 30px 15px;
+    }
+
+    /* Edit profile */
+    .edit-profile-wrapper {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    .edit-avatar-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .edit-form-actions {
+        flex-direction: column;
+    }
+    .edit-form-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Verify email / confirm-step (used by verify_email.html) */
+    .confirm-step-card {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+
+    /* Signup image column*/
+    .signup-image-col {
+        display: none;
+    }
+    .signup-page {
+        margin: 20px;
+    }
+    .signup-submit-btn {
+        width: 100%;
+    }
+
+    /* Profile / account shipping */
+    .account-shipping-box {
+        padding: 15px;
+    }
+
+     .productDetailContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .productImage, .productInfo {
+    flex: 1;
+  }
+
+  .productInfo select {
+    width: 50%;
+  }
+
+  .productInfo button {
+    width: auto;
+    padding: 0.75rem 2rem;
+  }
 }

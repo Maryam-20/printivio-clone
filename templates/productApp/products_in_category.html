@@ -3,60 +3,60 @@
 {% load static %}
 
 <!-- CATEGORY HERO BANNER -->
-<section class="category-hero">
-    <div class="container">
-        <h1 class="category-hero-title">{{ category.name }}</h1>
-        <p class="category-hero-tagline">{{ category.tagline }}</p>
-        <p class="category-hero-description">{{ category.description }}</p>
-        <a href="{% url 'allProducts' %}" class="btn btn-light category-hero-btn">See all {{ category.name|lower }}</a>
+<section class=" container category-hero py-5">
+    <div class="container text-start">
+        <h1 class="category-hero-title display-5 fw-bold">{{ category.name }}</h1>
+        <p class="category-hero-tagline">{{ first_product.title }}</p>
+        <p class="category-hero-description max-w-lg">{{ first_product.description }}</p>
+        <a href="{% url 'allProducts' %}" class="btn btn-outline-light mt-2 category-hero-btn">See all {{ category.name|lower }}</a>
     </div>
 </section>
 
 <!-- PRODUCT LIST -->
-<section class="category-products container my-5">
+<section class="category-products container my-4 my-md-5">
     {% for product in products_in_category %}
-    <div class="row product-row py-4 border-bottom align-items-start">
+    <div class="row product-row py-4 border-bottom align-items-center g-4">
 
         <!-- IMAGE -->
-        <div class="col-md-3">
-            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="img-fluid rounded">
+        <div class="col-12 col-sm-4 col-md-3 text-center">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="img-fluid rounded shadow-sm" style="max-height: 200px; width: 100%; object-fit: cover;">
         </div>
 
         <!-- DETAILS -->
-        <div class="col-md-5">
+        <div class="col-12 col-sm-8 col-md-5">
             <h4 class="fw-bold">{{ product.title }}</h4>
 
             {% if product.description %}
-            <p class="text-muted">{{ product.description }}</p>
+            <p class="text-muted small">{{ product.description }}</p>
             {% endif %}
 
             <p class="text-uppercase small text-muted mb-1">Starting at</p>
-            <p class="fw-bold fs-4">
+            <p class="fw-bold fs-4 mb-3">
                 {% if product.original_price %}
                     <span class="text-decoration-line-through text-muted fs-6 me-2">₦{{ product.original_price }}</span>
                 {% endif %}
                 ₦{{ product.price }}
             </p>
 
-            <a href="{% url 'productDetails' product.id %}" class="btn btn-danger">Order Now &gt;</a>
+            <a href="{% url 'productDetails' product.id %}" class="btn btn-danger w-100 w-sm-auto">Order Now &gt;</a>
         </div>
 
-        <!-- INFO COLUMN: delivery / material / finishing -->
-        <div class="col-md-4">
+        <!-- INFO COLUMN -->
+        <div class="col-12 col-md-4 bg-light p-3 rounded">
             {% if product.delivery_estimate_lagos or product.delivery_estimate_other %}
-            <p class="fw-bold mb-1">Delivery:</p>
-            <p class="text-muted mb-1">{{ product.delivery_estimate_lagos }}</p>
-            <p class="text-muted mb-3">{{ product.delivery_estimate_other }}</p>
+            <p class="fw-bold mb-1 small text-uppercase">Delivery:</p>
+            <p class="text-muted small mb-1">{{ product.delivery_estimate_lagos }}</p>
+            <p class="text-muted small mb-2">{{ product.delivery_estimate_other }}</p>
             {% endif %}
 
             {% if product.material %}
-            <p class="fw-bold mb-1">Material:</p>
-            <p class="text-muted mb-3">{{ product.material }}</p>
+            <p class="fw-bold mb-1 small text-uppercase">Material:</p>
+            <p class="text-muted small mb-2">{{ product.material }}</p>
             {% endif %}
 
             {% if product.finishing %}
-            <p class="fw-bold mb-1">Finishing:</p>
-            <p class="text-muted">{{ product.finishing }}</p>
+            <p class="fw-bold mb-1 small text-uppercase">Finishing:</p>
+            <p class="text-muted small mb-0">{{ product.finishing }}</p>
             {% endif %}
         </div>
 
@@ -65,5 +65,4 @@
     <p class="text-muted text-center py-5">No products found in this category yet.</p>
     {% endfor %}
 </section>
-
 {% endblock page_content %}
