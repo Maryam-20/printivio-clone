@@ -43,17 +43,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # Third Party Apps
     "cloudinary_storage",
     "cloudinary",
-    'django.contrib.staticfiles',
-    'productApp',
-    'authApp',
-    'orderApp',
-
-    # Third Party Apps
     "crispy_forms",
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
+
+    # Local Apps
+    'productApp',
+    'authApp',
+    'orderApp',
 ]
 
 MIDDLEWARE = [
@@ -156,11 +158,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Temporary change in settings.py:
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Media storage: Cloudinary in production, local disk in development
 CLOUDINARY_CLOUD_NAME = config("CLOUDINARY_CLOUD_NAME", default=None)
