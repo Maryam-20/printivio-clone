@@ -41,13 +41,11 @@ class Product(models.Model):
     def image_url(self):
         if not self.image:
             return ""
-            
-        if not settings.CLOUDINARY_CLOUD_NAME:
-            return self.image.url
-            
+     
         clean_name = str(self.image.name).lstrip('/')
-        
-        return f"https://://cloudinary.com{settings.CLOUDINARY_CLOUD_NAME}/image/upload/{clean_name}"
+      
+        return f"https://res.cloudinary.com/sgcvycez/image/upload/{clean_name}"
+
 
 
     def save(self, *args, **kwargs):
