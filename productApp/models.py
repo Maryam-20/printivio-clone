@@ -40,13 +40,14 @@ class Product(models.Model):
     @property
     def image_url(self):
         if not self.image:
-            return ""
-     
-        clean_name = str(self.image.name).lstrip('/')
-      
-        return f"https://res.cloudinary.com/sgcvycez/image/upload/{clean_name}"
-
-
+            return ""     
+       
+        if not settings.CLOUDINARY_CLOUD_NAME:
+            return self.image.url
+            
+        filename = str(self.image.name).split('/')[-1]
+        
+        return f"https://res.cloudinary.com/sgcvycez/image/upload/product_image/{filename}"
 
     def save(self, *args, **kwargs):
         if self.minimum_quantity_per_order and self.price_per_unit:
