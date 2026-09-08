@@ -41,15 +41,13 @@ class Product(models.Model):
     def image_url(self):
         if not self.image:
             return ""
-        
+            
         if not settings.CLOUDINARY_CLOUD_NAME:
             return self.image.url
             
-        # For production: Extract the clean filename (e.g., 'X-Large_Paper_Bags.png')
-        filename = self.image.name.split('/')[-1]
+        clean_name = str(self.image.name).lstrip('/')
         
-        # Build a bulletproof absolute fallback URL directly targeting your Cloudinary account
-        return f"https://cloudinary.com{settings.CLOUDINARY_CLOUD_NAME}/image/upload/product_image/{filename}"
+        return f"https://://cloudinary.com{settings.CLOUDINARY_CLOUD_NAME}/image/upload/{clean_name}"
 
 
     def save(self, *args, **kwargs):
