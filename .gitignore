@@ -1,4 +1,6 @@
 .env
 db.sqlite3
 __pycache__
+full_xampp_data.json
+upload_media.py
 media/
